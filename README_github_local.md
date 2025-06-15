@@ -98,8 +98,29 @@ When you're satisfied with your changes and ready to update GitHub:
    - Select "main"
 
 3. **Update main from GitHub**
-   - Click sync button (🔄)
-   - Ensures you have latest changes
+   
+   Use one of these methods:
+   
+   **Option A: Command Palette (Recommended)**
+   - Press `Cmd + Shift + P`
+   - Type: "Git: Pull"
+   - Press Enter
+   
+   **Option B: Source Control Panel**
+   - Open Source Control (`Cmd + Shift + G`)
+   - Click the three dots menu (...) at the top
+   - Select "Pull" or "Sync"
+   
+   **Option C: Status Bar**
+   - Look at bottom-left status bar for sync arrows (⟲)
+   - Click if present (may show numbers)
+   
+   **Option D: Terminal**
+   - Open terminal: `` Ctrl + ` ``
+   - Type: `git pull`
+   - Press Enter
+   
+   This ensures you have the latest changes from GitHub
 
 4. **Merge obsidian-dev into main**
    - Press `Cmd + Shift + P`
@@ -108,8 +129,22 @@ When you're satisfied with your changes and ready to update GitHub:
    - Resolve any conflicts if they appear
 
 5. **Push to GitHub**
-   - Click sync button (🔄)
-   - Your changes are now on GitHub!
+   
+   Use one of these methods:
+   
+   **Option A: Command Palette**
+   - Press `Cmd + Shift + P`
+   - Type: "Git: Push"
+   - Press Enter
+   
+   **Option B: Source Control Panel**
+   - Look for "Sync Changes" button
+   - Or click ... menu → "Push"
+   
+   **Option C: Status Bar**
+   - Click sync arrows if visible
+   
+   Your changes are now on GitHub!
 
 6. **Switch back to obsidian-dev**
    - Continue development
@@ -143,6 +178,14 @@ After pushing changes to GitHub, update your dev branch:
    ```
 
 This keeps obsidian-dev up-to-date with production code.
+
+### Understanding Sync Options
+
+**What each Git action does:**
+- **Pull**: Downloads changes from GitHub to your local branch
+- **Push**: Uploads your local commits to GitHub
+- **Sync**: Does both pull and push as needed
+- **Fetch**: Downloads info about changes without applying them
 
 ---
 
@@ -246,6 +289,8 @@ Merge when:
 |--------|--------|
 | Switch branches | Click branch name in status bar |
 | Create branch | Click branch → "Create new branch" |
+| Pull from GitHub | `Cmd+Shift+P` → "Git: Pull" |
+| Push to GitHub | `Cmd+Shift+P` → "Git: Push" |
 | Merge branches | `Cmd+Shift+P` → "Git: Merge Branch" |
 | View history | `Cmd+Shift+P` → "Git: View History" |
 | Discard changes | Source Control → "Discard Changes" |
