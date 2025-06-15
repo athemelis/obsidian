@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Tools Suite</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            color: #7c3aed;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: #6b7280;
+        }
+        
+        .status {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid #3b82f6;
+        }
+        
+        .status.success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border-color: #10b981;
+        }
+        
+        .status.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border-color: #ef4444;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .tool-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .tool-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+        
+        .tool-description {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        
+        .config-section {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .config-section h3 {
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+        
+        .config-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .config-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .config-group label {
+            min-width: 120px;
+            font-weight: 500;
+            color: #4b5563;
+        }
+        
+        .config-group input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .config-group input:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+        
+        .config-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .btn-save {
+            background-color: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-save:hover {
+            background-color: #059669;
+        }
+        
+        .btn-cancel {
+            background-color: #6b7280;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-cancel:hover {
+            background-color: #4b5563;
+        }
+        
+        .backup-status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .backup-status.success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+            display: block;
+        }
+        
+        .backup-status.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+            display: block;
+        }
+        
+        .backup-info {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .backup-info h4 {
+            margin-bottom: 10px;
+            color: #374151;
+        }
+        
+        .backup-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        
+        .backup-list li {
+            padding: 5px 0;
+            color: #6b7280;
+            font-size: 13px;
+            border-bottom: 1px solid #d1d5db;
+        }
+        
+        .backup-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .retention-notice {
+            color: #7c3aed;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 Obsidian Tools Suite</h1>
+            <p>Powerful tools for managing your Obsidian vault</p>
+        </div>
+        
+        <div class="status" id="connectionStatus">
+            Checking connection to server...
+        </div>
+        
+        <div class="config-section">
+            <h3>📁 Vault Configuration</h3>
+            <div class="config-form">
+                <div class="config-group">
+                    <label>Vault Path:</label>
+                    <input type="text" id="vaultPath" placeholder="/path/to/vault">
+                </div>
+                <div class="config-group">
+                    <label>Backup Path:</label>
+                    <input type="text" id="backupPath" placeholder="/path/to/backups">
+                </div>
+                <div class="config-buttons">
+                    <button class="btn-save" onclick="saveConfiguration()">Save Configuration</button>
+                    <button class="btn-cancel" onclick="loadConfiguration()">Reset</button>
+                </div>
+                <div class="backup-status" id="configStatus"></div>
+                
+                <div class="backup-info" id="backupInfo" style="display: none;">
+                    <h4>📦 Backup Information</h4>
+                    <div id="backupDetails"></div>
+                    <div class="retention-notice">
+                        ⚠️ Only the 3 most recent backups are kept. Older backups are automatically deleted.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tools-grid">
+            <a href="/query_tool.html" class="tool-card">
+                <span class="tool-icon">🔍</span>
+                <h2 class="tool-title">Note Query & Modifier</h2>
+                <p class="tool-description">
+                    Build complex queries to find notes by their frontmatter properties. 
+                    Modify properties across multiple notes at once with preview capability.
+                </p>
+            </a>
+            
+            <a href="/search_replace_tool.html" class="tool-card">
+                <span class="tool-icon">🔄</span>
+                <h2 class="tool-title">Search & Replace</h2>
+                <p class="tool-description">
+                    Search and replace text patterns across your vault. 
+                    Supports wildcards, file content, and filename operations with preview.
+                </p>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>Automatic backups will be created before any modifications</p>
+            <p style="font-size: 12px; margin-top: 5px;">Only the 3 most recent backups are retained</p>
+        </div>
+    </div>
+    
+    <script>
+        // When served by the server, use the same origin
+        const API_URL = window.location.origin;
+        
+        // Check server connection
+        async function checkConnection() {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                if (response.ok) {
+                    document.getElementById('connectionStatus').innerHTML = 
+                        `✅ Server is running at ${API_URL}`;
+                    document.getElementById('connectionStatus').className = 'status success';
+                } else {
+                    throw new Error('Server not responding');
+                }
+            } catch (error) {
+                document.getElementById('connectionStatus').innerHTML = 
+                    `❌ Cannot connect to server at ${API_URL}. Please ensure the server is running.`;
+                document.getElementById('connectionStatus').className = 'status error';
+            }
+        }
+        
+        // Load configuration
+        async function loadConfiguration() {
+            try {
+                const response = await fetch(`${API_URL}/config`);
+                if (response.ok) {
+                    const config = await response.json();
+                    document.getElementById('vaultPath').value = config.vault_path;
+                    document.getElementById('backupPath').value = config.backup_path;
+                    
+                    // Load backup info
+                    loadBackupInfo();
+                }
+            } catch (error) {
+                console.error('Error loading configuration:', error);
+            }
+        }
+        
+        // Load backup information
+        async function loadBackupInfo() {
+            try {
+                const response = await fetch(`${API_URL}/backup-info`);
+                if (response.ok) {
+                    const info = await response.json();
+                    const backupInfoDiv = document.getElementById('backupInfo');
+                    const backupDetailsDiv = document.getElementById('backupDetails');
+                    
+                    if (info.backup_count > 0) {
+                        let html = `<p>Total backups: ${info.backup_count} (${info.total_size_mb} MB)</p>`;
+                        html += '<ul class="backup-list">';
+                        
+                        info.backups.forEach(backup => {
+                            const date = new Date(backup.timestamp);
+                            const dateStr = date.toLocaleString();
+                            html += `<li>${backup.name} - ${backup.size_mb} MB (${dateStr})</li>`;
+                        });
+                        
+                        html += '</ul>';
+                        backupDetailsDiv.innerHTML = html;
+                        backupInfoDiv.style.display = 'block';
+                    } else {
+                        backupDetailsDiv.innerHTML = '<p>No backups found</p>';
+                        backupInfoDiv.style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading backup info:', error);
+            }
+        }
+        
+        // Save configuration
+        async function saveConfiguration() {
+            const vaultPath = document.getElementById('vaultPath').value;
+            const backupPath = document.getElementById('backupPath').value;
+            
+            if (!vaultPath || !backupPath) {
+                showConfigStatus('Please enter both vault and backup paths', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_URL}/config`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        vault_path: vaultPath,
+                        backup_path: backupPath
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showConfigStatus('Configuration saved successfully!', 'success');
+                    // Reload backup info
+                    loadBackupInfo();
+                } else {
+                    showConfigStatus(data.error || 'Failed to save configuration', 'error');
+                }
+            } catch (error) {
+                showConfigStatus('Error saving configuration: ' + error.message, 'error');
+            }
+        }
+        
+        // Show configuration status message
+        function showConfigStatus(message, type) {
+            const statusDiv = document.getElementById('configStatus');
+            statusDiv.textContent = message;
+            statusDiv.className = `backup-status ${type}`;
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Initialize
+        checkConnection();
+        loadConfiguration();
+        // Check connection every 5 seconds
+        setInterval(checkConnection, 5000);
+    </script>
+</body>
+</html>

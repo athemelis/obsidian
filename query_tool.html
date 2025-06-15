@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Note Query & Modifier</title>
+    <script>
+        // Define critical functions immediately
+        function addOperator(op) {
+            if (!window.queryExpression) {
+                window.queryExpression = [];
+            }
+            
+            const lastItem = window.queryExpression.length > 0 ? window.queryExpression[window.queryExpression.length - 1] : null;
+            
+            if (window.queryExpression.length === 0 && op !== 'NOT' && op !== '(') {
+                alert('Add a condition first');
+                return;
+            }
+            
+            if (lastItem && lastItem.type === 'operator' && 
+                !['(', ')'].includes(lastItem.value) && 
+                !['(', ')', 'NOT'].includes(op)) {
+                alert('Cannot add consecutive operators');
+                return;
+            }
+            
+            if (lastItem && lastItem.value === '(' && !['NOT', '('].includes(op) && op !== ')') {
+                alert('Add a condition or NOT after opening parenthesis');
+                return;
+            }
+            
+            window.queryExpression.push({
+                type: 'operator',
+                value: op
+            });
+            
+            if (typeof updateQueryDisplay === 'function') updateQueryDisplay();
+            if (typeof validateQuery === 'function') validateQuery();
+            if (typeof addToHistory === 'function') addToHistory();
+        }
+        
+        function clearQuery() {
+            window.queryExpression = [];
+            window.queryResults = [];
+            if (window.selectedFiles) window.selectedFiles.clear();
+            
+            if (typeof updateQueryDisplay === 'function') updateQueryDisplay();
+            if (typeof validateQuery === 'function') validateQuery();
+            if (typeof addToHistory === 'function') addToHistory();
+            
+            const resultsSection = document.getElementById('resultsSection');
+            if (resultsSection) resultsSection.style.display = 'none';
+            
+            const modificationSection = document.getElementById('modificationSection');
+            if (modificationSection) modificationSection.style.display = 'none';
+            
+            const queryResults = document.getElementById('queryResults');
+            if (queryResults) queryResults.innerHTML = '';
+            
+            const modificationPreview = document.getElementById('modificationPreview');
+            if (modificationPreview) modificationPreview.innerHTML = '';
+            
+            if (typeof updateSelectedCount === 'function') updateSelectedCount();
+        }
+        
+        function undo() {
+            if (!window.historyIndex || !window.queryHistory) return;
+            
+            if (window.historyIndex > 0) {
+                window.historyIndex--;
+                window.queryExpression = JSON.parse(JSON.stringify(window.queryHistory[window.historyIndex]));
+                if (typeof updateQueryDisplay === 'function') updateQueryDisplay();
+                if (typeof validateQuery === 'function') validateQuery();
+                if (typeof updateUndoRedoButtons === 'function') updateUndoRedoButtons();
+            }
+        }
+        
+        function redo() {
+            if (!window.historyIndex || !window.queryHistory) return;
+            
+            if (window.historyIndex < window.queryHistory.length - 1) {
+                window.historyIndex++;
+                window.queryExpression = JSON.parse(JSON.stringify(window.queryHistory[window.historyIndex]));
+                if (typeof updateQueryDisplay === 'function') updateQueryDisplay();
+                if (typeof validateQuery === 'function') validateQuery();
+                if (typeof updateUndoRedoButtons === 'function') updateUndoRedoButtons();
+            }
+        }
+        
+        function selectAll() {
+            // Initialize selectedFiles if needed
+            if (!window.selectedFiles) window.selectedFiles = new Set();
+            
+            // Check if we have query results
+            if (!window.queryResults || window.queryResults.length === 0) {
+                return;
+            }
+            
+            // Add all file paths to selectedFiles
+            window.queryResults.forEach(file => {
+                if (file && file.path) {
+                    window.selectedFiles.add(file.path);
+                }
+            });
+            
+            // Update UI
+            updateCheckboxes();
+            updateTableRows();
+            if (window.updateSelectedCount) window.updateSelectedCount();
+            updateSelectAllCheckbox();
+        }
+        
+        function deselectAll() {
+            if (!window.selectedFiles) window.selectedFiles = new Set();
+            
+            window.selectedFiles.clear();
+            
+            // Update UI - call the global functions directly
+            updateCheckboxes();
+            updateTableRows();
+            if (window.updateSelectedCount) window.updateSelectedCount();
+            updateSelectAllCheckbox();
+        }
+        
+        function proceedToModification() {
+            if (!window.selectedFiles) window.selectedFiles = new Set();
+            
+            if (window.selectedFiles.size === 0) {
+                alert('Please select at least one file to modify');
+                return;
+            }
+            const modificationSection = document.getElementById('modificationSection');
+            if (modificationSection) {
+                modificationSection.style.display = 'block';
+            }
+            if (typeof updateSelectedCount === 'function') updateSelectedCount();
+            
+            // Set up the listener after the section is visible
+            setTimeout(() => {
+                if (typeof setupOriginalValueListener === 'function') setupOriginalValueListener();
+            }, 100);
+        }
+        
+        function toggleSelectAll() {
+            const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+            
+            if (selectAllCheckbox && selectAllCheckbox.checked) {
+                selectAll();
+            } else {
+                deselectAll();
+            }
+        }
+        
+        function toggleFile(path, index) {
+            if (!window.selectedFiles) window.selectedFiles = new Set();
+            
+            if (window.selectedFiles.has(path)) {
+                window.selectedFiles.delete(path);
+                const row = document.getElementById(`row-${index}`);
+                if (row) row.classList.remove('selected');
+            } else {
+                window.selectedFiles.add(path);
+                const row = document.getElementById(`row-${index}`);
+                if (row) row.classList.add('selected');
+            }
+            
+            // Update UI - call the global functions directly
+            if (window.updateSelectedCount) window.updateSelectedCount();
+            updateSelectAllCheckbox();
+        }
+        
+        function updateCheckboxes() {
+            if (!window.queryResults || window.queryResults.length === 0) {
+                return;
+            }
+            
+            if (!window.selectedFiles) {
+                return;
+            }
+            
+            window.queryResults.forEach((file, index) => {
+                const checkbox = document.getElementById(`file-${index}`);
+                if (checkbox) {
+                    const isSelected = window.selectedFiles.has(file.path);
+                    checkbox.checked = isSelected;
+                }
+            });
+        }
+        
+        function updateTableRows() {
+            if (!window.queryResults) return;
+            
+            window.queryResults.forEach((file, index) => {
+                const row = document.getElementById(`row-${index}`);
+                if (row) {
+                    if (window.selectedFiles && window.selectedFiles.has(file.path)) {
+                        row.classList.add('selected');
+                    } else {
+                        row.classList.remove('selected');
+                    }
+                }
+            });
+        }
+        
+        function updateSelectAllCheckbox() {
+            const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+            if (selectAllCheckbox && window.selectedFiles && window.queryResults) {
+                if (window.selectedFiles.size === 0) {
+                    selectAllCheckbox.checked = false;
+                    selectAllCheckbox.indeterminate = false;
+                } else if (window.selectedFiles.size === window.queryResults.length) {
+                    selectAllCheckbox.checked = true;
+                    selectAllCheckbox.indeterminate = false;
+                } else {
+                    selectAllCheckbox.checked = false;
+                    selectAllCheckbox.indeterminate = true;
+                }
+            }
+        }
+
+        // Folder/File Management Functions
+window.loadFolders = async function() {
+    const vaultPath = document.getElementById('vaultPath').value;
+    console.log('Loading folders for path:', vaultPath);
+    
+    // Prevent infinite loops by checking if we're already loading
+    if (window.loadingFolders) {
+        console.log('Already loading folders, skipping...');
+        return;
+    }
+    
+    window.loadingFolders = true;
+    
+    try {
+        const response = await fetch(`${API_URL}/api/folders`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ vaultPath })
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Failed to load folders');
+        }
+        
+        const data = await response.json();
+        console.log('Folders loaded:', data.folders.length);
+        
+        window.allFolders = data.folders;
+        filterFolders();
+        
+    } catch (error) {
+        console.error('Error loading folders:', error);
+        document.getElementById('targetFolder').innerHTML = `<option value="">Error: ${error.message}</option>`;
+        alert('Error loading folders: ' + error.message);
+    } finally {
+        window.loadingFolders = false;
+    }
+};
+
+window.clearFolderSearch = function() {
+    document.getElementById('folderSearch').value = '';
+    filterFolders();
+};
+
+window.filterFolders = function() {
+    const searchTerm = document.getElementById('folderSearch').value.toLowerCase();
+    const select = document.getElementById('targetFolder');
+    const previousValue = select.value;
+    
+    select.innerHTML = '';
+    
+    const filteredFolders = searchTerm 
+        ? window.allFolders.filter(folder => folder.name.toLowerCase().includes(searchTerm) || 
+                                      folder.relativePath.toLowerCase().includes(searchTerm))
+        : window.allFolders;
+    
+    filteredFolders.forEach((folder) => {
+        const option = document.createElement('option');
+        option.value = folder.fullPath;
+        option.textContent = '\u00A0\u00A0'.repeat(folder.level + 1) + folder.name;
+        if (folder.fullPath === previousValue) {
+            option.selected = true;
+        }
+        select.appendChild(option);
+    });
+    
+    if (filteredFolders.length === 0) {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'No folders match your search';
+        select.appendChild(option);
+    }
+    
+    // Check if selection changed
+    if (select.value !== previousValue) {
+        handleFolderChange();
+    }
+};
+
+window.handleFolderChange = function() {
+    console.log('Folder changed to:', document.getElementById('targetFolder').value);
+    const folderPath = document.getElementById('targetFolder').value;
+    if (folderPath) {
+        loadFiles();
+    } else {
+        // Hide file selection if no folder is selected
+        document.getElementById('fileSelectGroup').style.display = 'none';
+    }
+};
+
+window.loadFiles = async function() {
+    const folderPath = document.getElementById('targetFolder').value;
+    const fileSelectGroup = document.getElementById('fileSelectGroup');
+    const fileSelect = document.getElementById('targetFile');
+    
+    console.log('Loading files for folder:', folderPath);
+    
+    if (!folderPath) {
+        fileSelectGroup.style.display = 'none';
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_URL}/api/files`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ folderPath })
+        });
+        
+        if (!response.ok) throw new Error('Failed to load files');
+        
+        const data = await response.json();
+        console.log('Files loaded:', data.files.length);
+        
+        window.allFiles = data.files;
+        document.getElementById('fileSearch').value = '';
+        filterFiles();
+        
+        fileSelectGroup.style.display = 'block';
+        
+    } catch (error) {
+        console.error('Error loading files:', error);
+        fileSelectGroup.style.display = 'none';
+    }
+};
+
+window.filterFiles = function() {
+    const searchTerm = document.getElementById('fileSearch').value.toLowerCase();
+    const select = document.getElementById('targetFile');
+    const currentValue = select.value;
+    
+    select.innerHTML = '<option value="">All files in folder</option>';
+    
+    const filteredFiles = searchTerm 
+        ? window.allFiles.filter(file => file.fileName.toLowerCase().includes(searchTerm))
+        : window.allFiles;
+    
+    filteredFiles.forEach(file => {
+        const option = document.createElement('option');
+        option.value = file.fullPath;
+        option.textContent = file.fileName;
+        if (file.fullPath === currentValue) {
+            option.selected = true;
+        }
+        select.appendChild(option);
+    });
+    
+    if (searchTerm && filteredFiles.length === 0) {
+        const option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'No files match your search';
+        select.appendChild(option);
+    }
+};
+
+window.clearFileSearch = function() {
+    document.getElementById('fileSearch').value = '';
+    filterFiles();
+};
+
+// Modification Functions
+window.checkPropertyTypes = async function() {
+    const property = document.getElementById('modifyProperty').value.trim();
+    if (!property) {
+        alert('Please enter a property name first');
+        return;
+    }
+    
+    const files = Array.from(window.selectedFiles);
+    if (files.length === 0) {
+        alert('No files selected');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_URL}/check-property-types`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ property, files })
+        });
+        
+        if (!response.ok) throw new Error('Failed to check property types');
+        
+        const data = await response.json();
+        const typeInfo = document.getElementById('propertyTypeInfo');
+        
+        let html = '<div style="padding: 10px; background-color: #f3f4f6; border-radius: 4px;">';
+        html += `<strong>Property "${property}" types across selected files:</strong><br>`;
+        
+        for (const [type, count] of Object.entries(data.types)) {
+            const percentage = ((count / files.length) * 100).toFixed(1);
+            html += `<div style="margin-top: 5px;">`;
+            
+            if (type === 'not_found') {
+                html += `❌ Not found: ${count} files (${percentage}%)`;
+            } else if (type === 'list') {
+                html += `📋 List type: ${count} files (${percentage}%)`;
+            } else {
+                html += `📝 Text type: ${count} files (${percentage}%)`;
+            }
+            
+            html += '</div>';
+        }
+        
+        html += '</div>';
+        typeInfo.innerHTML = html;
+        
+    } catch (error) {
+        console.error('Error checking property types:', error);
+        alert('Error checking property types: ' + error.message);
+    }
+};
+
+window.togglePropertyType = function() {
+    const typeSelector = document.getElementById('newPropertyType');
+    if (typeSelector.style.display === 'none' || typeSelector.style.display === '') {
+        typeSelector.style.display = 'block';
+    } else {
+        typeSelector.style.display = 'none';
+    }
+};
+
+window.previewChanges = async function() {
+    const property = document.getElementById('modifyProperty').value.trim();
+    const originalValue = document.getElementById('originalValue').value.trim();
+    const newValue = document.getElementById('newValue').value.trim();
+    
+    if (!property || !newValue) {
+        alert('Please enter both property name and new value');
+        return;
+    }
+    
+    const files = Array.from(window.selectedFiles);
+    if (files.length === 0) {
+        alert('No files selected');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_URL}/preview`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                property,
+                originalValue,
+                newValue,
+                files
+            })
+        });
+        
+        if (!response.ok) throw new Error('Failed to preview changes');
+        
+        const data = await response.json();
+        const previewDiv = document.getElementById('modificationPreview');
+        
+        let html = '<div class="preview">';
+        html += '<h3>Preview of Changes:</h3>';
+        
+        data.previews.forEach(preview => {
+            html += `<div style="margin-bottom: 10px;">`;
+            html += `<strong>${preview.file}</strong><br>`;
+            html += `<span style="color: #059669;">${preview.change}</span>`;
+            html += '</div>';
+        });
+        
+        if (data.previews.length < files.length) {
+            html += `<div style="margin-top: 10px; color: #6b7280;">`;
+            html += `... and ${files.length - data.previews.length} more files`;
+            html += '</div>';
+        }
+        
+        html += '</div>';
+        previewDiv.innerHTML = html;
+        
+    } catch (error) {
+        console.error('Error previewing changes:', error);
+        alert('Error previewing changes: ' + error.message);
+    }
+};
+
+window.modifySingle = async function() {
+    const files = Array.from(window.selectedFiles);
+    if (files.length === 0) {
+        alert('No files selected');
+        return;
+    }
+    
+    // Only modify the first file
+    const singleFile = [files[0]];
+    await performModification(singleFile, 'single');
+};
+
+window.modifyAll = async function() {
+    const files = Array.from(window.selectedFiles);
+    if (files.length === 0) {
+        alert('No files selected');
+        return;
+    }
+    
+    if (!confirm(`Are you sure you want to modify ${files.length} files?`)) {
+        return;
+    }
+    
+    await performModification(files, 'all');
+};
+
+window.performModification = async function(files, mode) {
+    const property = document.getElementById('modifyProperty').value.trim();
+    const originalValue = document.getElementById('originalValue').value.trim();
+    let newValue = document.getElementById('newValue').value.trim();
+    
+    if (!property || newValue === '') {
+        alert('Please enter both property name and new value');
+        return;
+    }
+    
+    // Show loading state
+    const loadingDiv = document.getElementById('modificationLoading');
+    const progressDiv = document.getElementById('modificationProgress');
+    loadingDiv.classList.add('active');
+    progressDiv.textContent = `Processing ${files.length} file(s)...`;
+    
+    // Handle new property type if original value is empty
+    if (!originalValue) {
+        const propertyType = document.getElementById('propertyType').value;
+        
+        // Convert value based on type
+        switch (propertyType) {
+            case 'list':
+                newValue = newValue.split(',').map(v => v.trim()).filter(v => v);
+                break;
+            case 'number':
+                newValue = parseFloat(newValue);
+                if (isNaN(newValue)) {
+                    alert('Invalid number format');
+                    loadingDiv.classList.remove('active');
+                    return;
+                }
+                break;
+            case 'checkbox':
+                newValue = newValue.toLowerCase() === 'true';
+                break;
+            case 'date':
+            case 'datetime':
+                // Validate date format
+                if (!newValue.match(/^\d{4}-\d{2}-\d{2}/) && 
+                    !newValue.match(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/)) {
+                    alert('Invalid date format. Use YYYY-MM-DD or YYYY-MM-DD HH:MM');
+                    loadingDiv.classList.remove('active');
+                    return;
+                }
+                break;
+        }
+    }
+    
+    try {
+        const response = await fetch(`${API_URL}/modify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                property,
+                originalValue,
+                newValue,
+                files
+            })
+        });
+        
+        if (!response.ok) throw new Error('Failed to modify files');
+        
+        const data = await response.json();
+        
+        // Update log
+        const logDiv = document.getElementById('changeLog');
+        const logEntry = document.createElement('div');
+        logEntry.className = 'log-entry';
+        logEntry.innerHTML = `
+            <strong>${new Date().toLocaleString()}</strong><br>
+            Modified ${data.modified} of ${data.total} files<br>
+            Property: ${property}<br>
+            ${originalValue ? `Original: ${originalValue}<br>` : ''}
+            New: ${JSON.stringify(newValue)}<br>
+            Mode: ${mode}<br>
+            Backup: ${data.backup_path}
+        `;
+        logDiv.insertBefore(logEntry, logDiv.firstChild);
+        
+        // Show success message
+        alert(`Successfully modified ${data.modified} file(s).\n\nBackup created at:\n${data.backup_path}`);
+        
+        // Clear preview
+        document.getElementById('modificationPreview').innerHTML = '';
+        
+    } catch (error) {
+        console.error('Error modifying files:', error);
+        alert('Error modifying files: ' + error.message);
+    } finally {
+        loadingDiv.classList.remove('active');
+    }
+};
+
+window.clearLog = function() {
+    if (confirm('Clear all log entries?')) {
+        document.getElementById('changeLog').innerHTML = '';
+    }
+};
+
+// Initialize folder search listener
+window.addEventListener('DOMContentLoaded', function() {
+    // Add event listener for folder search
+    const folderSearchInput = document.getElementById('folderSearch');
+    if (folderSearchInput) {
+        folderSearchInput.addEventListener('input', filterFolders);
+    }
+    
+    // Add event listener for file search
+    const fileSearchInput = document.getElementById('fileSearch');
+    if (fileSearchInput) {
+        fileSearchInput.addEventListener('input', filterFiles);
+    }
+    
+    // Load folders initially
+    loadFolders();
+});
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav-bar {
+            background-color: #7c3aed;
+            margin: -20px -20px 20px -20px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        .nav-bar a:hover {
+            opacity: 0.8;
+        }
+        .nav-title {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .query-builder {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input[type="text"], select, textarea {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            width: 300px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            font-family: monospace;
+            resize: vertical;
+        }
+        button {
+            background-color: #7c3aed;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #6d28d9;
+        }
+        button:disabled {
+            background-color: #d1d5db;
+            cursor: not-allowed;
+        }
+        .secondary-btn {
+            background-color: #6b7280;
+        }
+        .secondary-btn:hover {
+            background-color: #4b5563;
+        }
+        .danger-btn {
+            background-color: #ef4444;
+        }
+        .danger-btn:hover {
+            background-color: #dc2626;
+        }
+        .success-btn {
+            background-color: #10b981;
+        }
+        .success-btn:hover {
+            background-color: #059669;
+        }
+        .results {
+            background-color: #f9fafb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .results-table th {
+            background-color: #f3f4f6;
+            color: #374151;
+            font-weight: 600;
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 2px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .results-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        .results-table tr:hover {
+            background-color: #f9fafb;
+        }
+        .results-table tr.selected {
+            background-color: #ede9fe;
+        }
+        .file-checkbox {
+            margin: 0;
+            cursor: pointer;
+        }
+        .file-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        .file-path {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .property-value {
+            font-size: 13px;
+            color: #374151;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .property-value.list {
+            color: #7c3aed;
+        }
+        .property-value.wikilink {
+            color: #2563eb;
+        }
+        .property-value.empty {
+            color: #9ca3af;
+            font-style: italic;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+        .loading.active {
+            display: block;
+        }
+        .spinner {
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #7c3aed;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .file-item {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .file-item:hover {
+            background-color: #f3f4f6;
+        }
+        .file-item.selected {
+            background-color: #ede9fe;
+            border-color: #7c3aed;
+        }
+        .preview {
+            background-color: #fef3c7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #fbbf24;
+        }
+        .log-entry {
+            padding: 5px;
+            margin: 2px 0;
+            font-family: monospace;
+            font-size: 12px;
+            background-color: #f3f4f6;
+            border-radius: 3px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .status.success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        .status.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        .status.info {
+            background-color: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #3b82f6;
+        }
+        .query-expression {
+            font-family: monospace;
+            background-color: #e5e7eb;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .help-text {
+            font-size: 12px;
+            color: #6b7280;
+            margin: 5px 0;
+        }
+        .modification-section {
+            background-color: #f0fdf4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px solid #86efac;
+        }
+        .property-type {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        .type-text {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+        .type-list {
+            background-color: #fce7f3;
+            color: #be185d;
+        }
+        .saved-queries {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .saved-query-item {
+            background-color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .saved-query-item:hover {
+            background-color: #f9fafb;
+        }
+        .query-name {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .query-text {
+            font-family: monospace;
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+        .query-actions {
+            display: flex;
+            gap: 5px;
+        }
+        .query-actions button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        .tab.active {
+            color: #7c3aed;
+            border-bottom-color: #7c3aed;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .search-box {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .query-invalid {
+            border-color: #ef4444 !important;
+            background-color: #fee2e2 !important;
+        }
+        .validation-error {
+            color: #ef4444;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .undo-redo-buttons {
+            display: flex;
+            gap: 5px;
+            margin-left: auto;
+        }
+        .undo-redo-buttons button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .import-export-buttons {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .import-export-buttons button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .keyboard-shortcuts {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .shortcut-item {
+            margin: 2px 0;
+        }
+        .shortcut-key {
+            background-color: #e5e7eb;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #374151;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+        .value-input-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        #propertyValue:disabled {
+            background-color: #f3f4f6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="/">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Menu
+        </a>
+        <span class="nav-title">Note Query & Modifier</span>
+    </div>
+    
+    <div class="container">
+        <h1>🔍 Obsidian Note Query & Modifier</h1>
+        
+        <div class="status info" id="connectionStatus">
+            Checking connection to local server...
+        </div>
+
+        <div class="section">
+            <h2>1. Configure Search Scope (Optional)</h2>
+            <div class="help-text" style="margin-bottom: 15px;">
+                Leave at "Entire Vault" to search all notes, or select a specific folder/file to narrow the scope
+            </div>
+            
+            <div class="form-group">
+                <label for="vaultPath">Vault Path</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="vaultPath" value="/Users/tonythem/Obsidian/tonythem/" required style="flex: 1; width: auto;">
+                    <button type="button" class="secondary-btn" onclick="loadFolders()" style="padding: 10px 20px;">Refresh Folders</button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="targetFolder">Target Folder</label>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="folderSearch" placeholder="Type to search folders..." style="flex: 1; width: auto;">
+                    <button type="button" class="secondary-btn" onclick="clearFolderSearch()" style="padding: 10px 20px;">Clear</button>
+                </div>
+                <select id="targetFolder" onchange="handleFolderChange()" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; background-color: white; cursor: pointer;">
+                    <option value="">Loading folders...</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="fileSelectGroup" style="display: none;">
+                <label for="targetFile">Target File (Optional)</label>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="fileSearch" placeholder="Type to search files..." style="flex: 1; width: auto;">
+                    <button type="button" class="secondary-btn" onclick="clearFileSearch()" style="padding: 10px 20px;">Clear</button>
+                </div>
+                <select id="targetFile" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; background-color: white; cursor: pointer;">
+                    <option value="">All files in folder</option>
+                </select>
+                <div class="help-text">Select a specific file to limit query to that file only</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Build Your Query (Optional)</h2>
+            <div class="help-text" style="margin-bottom: 15px;">
+                Leave empty to retrieve all notes in the selected scope, or build a query to filter by properties
+            </div>
+            
+            <!-- Saved Queries Section -->
+            <div class="saved-queries">
+                <h3>📚 Recent Queries</h3>
+                <input type="text" class="search-box" id="querySearch" placeholder="Search queries..." onkeyup="filterSavedQueries()">
+                <div id="savedQueriesList" style="max-height: 200px; overflow-y: auto;">
+                    <!-- Saved queries will be loaded here -->
+                </div>
+                <div style="margin-top: 10px;">
+                    <button onclick="saveCurrentQuery(event)" class="success-btn" style="font-size: 12px; padding: 8px 16px;">💾 Save Current Query</button>
+                </div>
+                <div class="import-export-buttons">
+                    <button onclick="exportQueries()" class="secondary-btn">📤 Export All Queries</button>
+                    <button onclick="importQueries()" class="secondary-btn">📥 Import Queries</button>
+                    <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleImportFile(event)">
+                </div>
+            </div>
+            
+            <!-- Query Builder Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('builder')">Query Builder</button>
+                <button class="tab" onclick="switchTab('editor')">Query Editor</button>
+            </div>
+            
+            <!-- Builder Tab -->
+            <div id="builderTab" class="tab-content active">
+                <div class="query-builder">
+                    <div>
+                        <label>Property Name:</label>
+                        <input type="text" id="propertyName" placeholder="e.g., Obsidian, Stakeholder">
+                        
+                        <label>Operator:</label>
+                        <select id="operator" onchange="handleOperatorChange()">
+                            <option value="equals">=</option>
+                            <option value="contains">contains</option>
+                            <option value="startsWith">starts with</option>
+                            <option value="endsWith">ends with</option>
+                            <option value="exists">exists</option>
+                            <option value="notExists">does not exist</option>
+                        </select>
+                        
+                        <div class="value-input-group">
+                            <label>Value:</label>
+                            <input type="text" id="propertyValue" placeholder="e.g., Accountabilities, 🪧 Stakeholders">
+                        </div>
+                        
+                        <button type="button" id="addConditionBtn" onclick="addCondition()">Add Condition</button>
+                    </div>
+                    
+                    <div class="help-text">
+                        Use * for wildcards (e.g., "Account*" matches "Accountabilities")<br>
+                        Values are case-sensitive. Use quotes for values with spaces.<br>
+                        Use "exists" to find notes with the property (any value)<br>
+                        Use "does not exist" to find notes without the property or where it's empty
+                    </div>
+                    
+                    <div id="conditions" style="margin-top: 15px;"></div>
+                    
+                    <div style="margin-top: 15px;">
+                        <button onclick="addOperator('AND')">AND</button>
+                        <button onclick="addOperator('OR')">OR</button>
+                        <button onclick="addOperator('NOT')">NOT</button>
+                        <button onclick="addOperator('(')">(</button>
+                        <button onclick="addOperator(')')">)</button>
+                        <button class="secondary-btn" onclick="clearQuery()">Clear</button>
+                        <div class="undo-redo-buttons">
+                            <button onclick="undo()" id="undoBtn" class="secondary-btn" disabled>↶ Undo</button>
+                            <button onclick="redo()" id="redoBtn" class="secondary-btn" disabled>↷ Redo</button>
+                        </div>
+                    </div>
+                    
+                    <div class="query-expression" id="queryExpression"></div>
+                    <div id="validationError" class="validation-error"></div>
+                </div>
+            </div>
+            
+            <!-- Editor Tab -->
+            <div id="editorTab" class="tab-content">
+                <div class="query-builder">
+                    <label>Edit Query Expression:</label>
+                    <textarea id="queryEditor" placeholder='Enter query like: Obsidian equals "[[🦋 Categories]]" AND Category equals "[[🏢 Companies]]"'></textarea>
+                    <div class="help-text">
+                        Format: property operator "value" AND/OR/NOT ...<br>
+                        Operators: equals, contains, startsWith, endsWith, exists, notExists<br>
+                        Use parentheses for grouping: (A OR B) AND C<br>
+                        For exists/notExists operators, omit the value: Stakeholder notExists
+                    </div>
+                    <button onclick="parseQueryFromEditor()">Parse Query</button>
+                    <button onclick="syncEditorWithBuilder()" class="secondary-btn">Sync from Builder</button>
+                </div>
+            </div>
+            
+            <button onclick="executeQuery()" style="margin-top: 10px;">Search Notes</button>
+            
+            <div class="help-text" style="margin-top: 10px;">
+                <strong>Search Options:</strong>
+                <div class="shortcut-item">• <strong>Scope only:</strong> Select a folder/file and leave query empty to get all notes in that scope</div>
+                <div class="shortcut-item">• <strong>Query only:</strong> Build a query and leave scope at "Entire Vault" to search all notes</div>
+                <div class="shortcut-item">• <strong>Both:</strong> Combine scope and query for targeted searches</div>
+            </div>
+            
+            <div class="keyboard-shortcuts">
+                <strong>Keyboard Shortcuts:</strong>
+                <div class="shortcut-item"><span class="shortcut-key">Enter</span> in property name → Focus value field</div>
+                <div class="shortcut-item"><span class="shortcut-key">Enter</span> in value field → Add condition</div>
+                <div class="shortcut-item"><span class="shortcut-key">Ctrl+Z</span> / <span class="shortcut-key">Cmd+Z</span> → Undo</div>
+                <div class="shortcut-item"><span class="shortcut-key">Ctrl+Y</span> / <span class="shortcut-key">Cmd+Shift+Z</span> → Redo</div>
+                <div class="shortcut-item"><span class="shortcut-key">Ctrl+Enter</span> / <span class="shortcut-key">Cmd+Enter</span> → Execute query</div>
+                <div class="shortcut-item"><span class="shortcut-key">Escape</span> → Clear current inputs</div>
+            </div>
+        </div>
+
+        <div class="section" id="resultsSection" style="display: none;">
+            <h2>3. Query Results</h2>
+            <div id="resultsSummary"></div>
+            <div class="results" id="queryResults"></div>
+            
+            <div style="margin-top: 10px;">
+                <button onclick="selectAll()">Select All</button>
+                <button onclick="deselectAll()">Deselect All</button>
+                <button class="secondary-btn" onclick="proceedToModification()">Proceed to Modification</button>
+            </div>
+        </div>
+
+        <div class="section modification-section" id="modificationSection" style="display: none;">
+            <h2>4. Modify Properties</h2>
+            
+            <div>
+                <h3>Selected Files: <span id="selectedCount">0</span></h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <label>Property to Modify:</label>
+                    <input type="text" id="modifyProperty" placeholder="Property name">
+                    <button onclick="checkPropertyTypes()">Check Property Types</button>
+                    <div id="propertyTypeInfo" style="margin-top: 10px;"></div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label>Original Value:</label>
+                    <input type="text" id="originalValue" placeholder="Value to replace (leave empty to add new)">
+                    <button type="button" onclick="togglePropertyType()" style="padding: 8px 12px; font-size: 12px; margin-left: 10px;">Show/Hide Type</button>
+                    
+                    <div id="newPropertyType" style="margin: 15px 0; display: none;">
+                        <label>New Property Type:</label>
+                        <select id="propertyType" style="padding: 8px; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                            <option value="text">Text</option>
+                            <option value="list">List</option>
+                            <option value="number">Number</option>
+                            <option value="checkbox">Checkbox</option>
+                            <option value="date">Date</option>
+                            <option value="datetime">Date & Time</option>
+                        </select>
+                        <div class="help-text" style="margin-top: 5px;">
+                            Choose the type for the new property
+                        </div>
+                    </div>
+                    
+                    <label>New Value:</label>
+                    <input type="text" id="newValue" placeholder="New value">
+                    <div class="help-text">
+                        For wikilinks, enter: [[✈️ Travel Plans]]<br>
+                        For regular text, just enter: Active<br>
+                        For lists, separate items with commas: item1, item2, item3<br>
+                        For checkbox, enter: true or false<br>
+                        For dates, use format: YYYY-MM-DD<br>
+                        For date & time, use format: YYYY-MM-DD HH:MM
+                    </div>
+                </div>
+                
+                <div>
+                    <button onclick="previewChanges()">Preview Changes</button>
+                    <button onclick="modifySingle()" class="secondary-btn">Modify First File (Test)</button>
+                    <button onclick="modifyAll()" class="danger-btn">Modify All Selected</button>
+                </div>
+                
+                <div class="loading" id="modificationLoading">
+                    <div class="spinner"></div>
+                    <p id="modificationProgress">Processing...</p>
+                </div>
+                
+                <div id="modificationPreview" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Change Log</h2>
+            <button onclick="clearLog()" class="secondary-btn">Clear Log</button>
+            <div class="results" id="changeLog" style="max-height: 200px;"></div>
+        </div>
+    </div>
+
+    <script>
+        // Minimal test to ensure JavaScript works
+        (function() {
+            console.log('Script starting...');
+            
+            // Initialize global variables
+            window.queryExpression = [];
+            window.queryResults = [];
+            window.selectedFiles = new Set();
+            window.savedQueries = [];
+            window.API_URL = window.location.origin;
+            
+            // Undo/Redo history
+            window.queryHistory = [];
+            window.historyIndex = -1;
+            window.MAX_HISTORY = 50;
+            
+            // Folder/file management
+            window.allFolders = [];
+            window.allFiles = [];
+            
+            // Define functions in global scope immediately
+            window.handleOperatorChange = function() {
+                console.log('handleOperatorChange called');
+                const operator = document.getElementById('operator').value;
+                const valueInput = document.getElementById('propertyValue');
+                
+                if (operator === 'exists' || operator === 'notExists') {
+                    valueInput.disabled = true;
+                    valueInput.value = '';
+                    valueInput.placeholder = 'Not needed for this operator';
+                } else {
+                    valueInput.disabled = false;
+                    valueInput.placeholder = 'e.g., Accountabilities, 🪧 Stakeholders';
+                }
+            };
+            
+            window.addCondition = function() {
+                console.log('addCondition called');
+                
+                const property = document.getElementById('propertyName').value.trim();
+                const operator = document.getElementById('operator').value;
+                const value = document.getElementById('propertyValue').value.trim();
+                
+                console.log('Values:', { property, operator, value });
+                
+                if (!property) {
+                    alert('Please enter a property name');
+                    return;
+                }
+                
+                // For exists/notExists operators, value is not required
+                if (operator !== 'exists' && operator !== 'notExists' && !value) {
+                    alert('Please enter a value for this operator');
+                    return;
+                }
+                
+                // Check if queryExpression is defined
+                if (typeof queryExpression === 'undefined') {
+                    console.error('queryExpression is not defined!');
+                    window.queryExpression = [];
+                }
+                
+                queryExpression.push({
+                    type: 'condition',
+                    property: property,
+                    operator: operator,
+                    value: (operator === 'exists' || operator === 'notExists') ? '' : value
+                });
+                
+                console.log('Query expression:', queryExpression);
+                
+                // Check if these functions exist before calling them
+                if (typeof updateQueryDisplay === 'function') {
+                    updateQueryDisplay();
+                } else {
+                    console.error('updateQueryDisplay is not defined');
+                }
+                
+                if (typeof validateQuery === 'function') {
+                    validateQuery();
+                } else {
+                    console.error('validateQuery is not defined');
+                }
+                
+                if (typeof addToHistory === 'function') {
+                    addToHistory();
+                } else {
+                    console.error('addToHistory is not defined');
+                }
+                
+                // Clear inputs
+                document.getElementById('propertyName').value = '';
+                document.getElementById('propertyValue').value = '';
+                
+                // Reset operator to default
+                document.getElementById('operator').value = 'equals';
+                handleOperatorChange();
+                
+                // Focus back on property name for quick entry
+                document.getElementById('propertyName').focus();
+            };
+            
+            // Define updateQueryDisplay function
+            window.updateQueryDisplay = function() {
+                let display = '';
+                queryExpression.forEach(item => {
+                    if (item.type === 'condition') {
+                        if (item.operator === 'exists' || item.operator === 'notExists') {
+                            const operatorText = item.operator === 'exists' ? 'exists' : 'does not exist';
+                            display += `${item.property} ${operatorText} `;
+                        } else {
+                            display += `${item.property} ${item.operator} "${item.value}" `;
+                        }
+                    } else {
+                        display += `${item.value} `;
+                    }
+                });
+                const queryDiv = document.getElementById('queryExpression');
+                if (queryDiv) {
+                    queryDiv.textContent = display || 'No query built yet';
+                }
+                console.log('Query display updated:', display);
+            };
+            
+            // Stub functions for now
+            window.validateQuery = function() {
+                console.log('validateQuery called');
+                const errorDiv = document.getElementById('validationError');
+                const queryDiv = document.getElementById('queryExpression');
+                
+                // Check for empty query
+                if (queryExpression.length === 0) {
+                    if (errorDiv) errorDiv.textContent = '';
+                    if (queryDiv) queryDiv.classList.remove('query-invalid');
+                    return true;
+                }
+                
+                // Check parentheses balance
+                let parenCount = 0;
+                for (const item of queryExpression) {
+                    if (item.type === 'operator') {
+                        if (item.value === '(') parenCount++;
+                        else if (item.value === ')') parenCount--;
+                        
+                        if (parenCount < 0) {
+                            if (errorDiv) errorDiv.textContent = 'Error: Unmatched closing parenthesis';
+                            if (queryDiv) queryDiv.classList.add('query-invalid');
+                            return false;
+                        }
+                    }
+                }
+                
+                if (parenCount !== 0) {
+                    if (errorDiv) errorDiv.textContent = `Error: ${parenCount} unclosed parenthes${parenCount === 1 ? 'is' : 'es'}`;
+                    if (queryDiv) queryDiv.classList.add('query-invalid');
+                    return false;
+                }
+                
+                // All checks passed
+                if (errorDiv) errorDiv.textContent = '';
+                if (queryDiv) queryDiv.classList.remove('query-invalid');
+                return true;
+            };
+            
+            window.addToHistory = function() {
+                console.log('addToHistory called');
+                // Remove any future history if we're not at the end
+                if (historyIndex < queryHistory.length - 1) {
+                    queryHistory = queryHistory.slice(0, historyIndex + 1);
+                }
+                
+                // Add current state
+                queryHistory.push(JSON.parse(JSON.stringify(queryExpression)));
+                
+                // Limit history size
+                if (queryHistory.length > MAX_HISTORY) {
+                    queryHistory = queryHistory.slice(-MAX_HISTORY);
+                }
+                
+                historyIndex = queryHistory.length - 1;
+                if (typeof updateUndoRedoButtons === 'function') {
+                    updateUndoRedoButtons();
+                }
+            };
+            
+            // Add executeQuery function
+            window.executeQuery = async function() {
+                console.log('executeQuery called');
+                console.log('API_URL:', API_URL);
+                
+                // Get search scope
+                const vaultPath = document.getElementById('vaultPath').value;
+                const targetFolder = document.getElementById('targetFolder').value;
+                const targetFile = document.getElementById('targetFile').value;
+                
+                console.log('Search parameters:', { vaultPath, targetFolder, targetFile });
+                
+                // Check if we have either a query or a scope limitation
+                const hasQuery = queryExpression.length > 0;
+                const hasScope = targetFolder && targetFolder !== vaultPath;
+                const hasFileScope = targetFile && targetFile !== '';
+                
+                // Validate query if one exists
+                if (hasQuery && !validateQuery()) {
+                    alert('Please fix the query errors before searching');
+                    return;
+                }
+                
+                // If no query and no scope limitation, confirm with user
+                if (!hasQuery && !hasScope && !hasFileScope) {
+                    if (!confirm('This will retrieve ALL notes in your entire vault. Continue?')) {
+                        return;
+                    }
+                }
+                
+                selectedFiles.clear();
+                queryResults = [];
+                
+                // Show loading state
+                const resultsDiv = document.getElementById('queryResults');
+                if (resultsDiv) {
+                    resultsDiv.innerHTML = '<div style="text-align: center; padding: 20px;">Searching...</div>';
+                }
+                const resultsSection = document.getElementById('resultsSection');
+                if (resultsSection) {
+                    resultsSection.style.display = 'block';
+                }
+                
+                try {
+                    const requestBody = { 
+                        expression: queryExpression,
+                        includeProperties: ['Obsidian', 'Category', 'Subcategory', 'Team', 'Stakeholder'],
+                        vaultPath: vaultPath,
+                        targetPath: targetFolder || vaultPath,
+                        targetFile: targetFile
+                    };
+                    
+                    console.log('Sending request to:', `${API_URL}/query`);
+                    console.log('Request body:', requestBody);
+                    
+                    const response = await fetch(`${API_URL}/query`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(requestBody)
+                    });
+                    
+                    console.log('Response status:', response.status);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    console.log('Response data:', data);
+                    
+                    if (data.error) {
+                        alert('Error: ' + data.error);
+                        if (resultsSection) resultsSection.style.display = 'none';
+                        return;
+                    }
+                    
+                    queryResults = data.results;
+                    console.log('Query results:', queryResults.length, 'files found');
+                    
+                    if (typeof displayResults === 'function') {
+                        displayResults(data);
+                    } else {
+                        console.error('displayResults function not found');
+                        // Basic display for now
+                        if (resultsDiv) {
+                            resultsDiv.innerHTML = `<div>Found ${data.count} files</div>`;
+                        }
+                    }
+                    
+                    if (typeof updateSelectedCount === 'function') {
+                        updateSelectedCount();
+                    }
+                    
+                } catch (error) {
+                    console.error('Query error:', error);
+                    alert('Error executing search: ' + error.message);
+                    if (resultsSection) resultsSection.style.display = 'none';
+                }
+            };
+            
+            // Add switchTab function
+            window.switchTab = function(tab) {
+                console.log('switchTab called:', tab);
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+                
+                if (tab === 'builder') {
+                    document.querySelector('.tab:first-child').classList.add('active');
+                    document.getElementById('builderTab').classList.add('active');
+                } else {
+                    document.querySelector('.tab:last-child').classList.add('active');
+                    document.getElementById('editorTab').classList.add('active');
+                    if (typeof syncEditorWithBuilder === 'function') {
+                        syncEditorWithBuilder();
+                    }
+                }
+            };
+            
+            // Add saveCurrentQuery function
+            window.saveCurrentQuery = function(event) {
+                console.log('saveCurrentQuery called');
+                if (queryExpression.length === 0) {
+                    alert('Please build a query first');
+                    return;
+                }
+                
+                const displayText = getQueryDisplayText();
+                
+                // Check if this exact query already exists
+                const existingIndex = savedQueries.findIndex(q => q.displayText === displayText);
+                if (existingIndex !== -1) {
+                    // Move existing query to top
+                    const existing = savedQueries.splice(existingIndex, 1)[0];
+                    existing.createdAt = new Date().toISOString();
+                    savedQueries.unshift(existing);
+                } else {
+                    // Add new query at the beginning (most recent first)
+                    savedQueries.unshift({
+                        expression: JSON.parse(JSON.stringify(queryExpression)),
+                        displayText: displayText,
+                        createdAt: new Date().toISOString()
+                    });
+                    
+                    // Keep only the last 50 queries
+                    if (savedQueries.length > 50) {
+                        savedQueries = savedQueries.slice(0, 50);
+                    }
+                }
+                
+                if (typeof saveSavedQueries === 'function') {
+                    saveSavedQueries();
+                }
+                if (typeof displaySavedQueries === 'function') {
+                    displaySavedQueries();
+                }
+                
+                // Show brief confirmation
+                const button = event ? event.target : document.querySelector('.success-btn');
+                if (button) {
+                    const originalText = button.textContent;
+                    button.textContent = '✅ Saved!';
+                    button.disabled = true;
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.disabled = false;
+                    }, 1500);
+                }
+            };
+            
+            // Add getQueryDisplayText function
+            window.getQueryDisplayText = function() {
+                let display = '';
+                queryExpression.forEach(item => {
+                    if (item.type === 'condition') {
+                        if (item.operator === 'exists' || item.operator === 'notExists') {
+                            const operatorText = item.operator === 'exists' ? 'exists' : 'does not exist';
+                            display += `${item.property} ${operatorText} `;
+                        } else {
+                            display += `${item.property} ${item.operator} "${item.value}" `;
+                        }
+                    } else {
+                        display += `${item.value} `;
+                    }
+                });
+                return display.trim();
+            };
+            
+            // Add loadSavedQueries function
+            window.loadSavedQueries = async function() {
+                console.log('loadSavedQueries called');
+                try {
+                    const response = await fetch(`${API_URL}/saved-queries`);
+                    if (response.ok) {
+                        savedQueries = await response.json();
+                        console.log('Loaded saved queries:', savedQueries.length);
+                        if (typeof displaySavedQueries === 'function') {
+                            displaySavedQueries();
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading saved queries:', error);
+                    // Fallback to localStorage if server fails
+                    const stored = localStorage.getItem('obsidianSavedQueries');
+                    if (stored) {
+                        savedQueries = JSON.parse(stored);
+                        if (typeof displaySavedQueries === 'function') {
+                            displaySavedQueries();
+                        }
+                    }
+                }
+            };
+            
+            // Add stub for displaySavedQueries
+            window.displaySavedQueries = function() {
+                console.log('displaySavedQueries called, queries:', savedQueries.length);
+                const container = document.getElementById('savedQueriesList');
+                if (!container) return;
+                
+                if (savedQueries.length === 0) {
+                    container.innerHTML = '<div style="padding: 10px; color: #6b7280;">No saved queries found</div>';
+                    return;
+                }
+                
+                container.innerHTML = savedQueries.map((query, index) => {
+                    const date = new Date(query.createdAt);
+                    const dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    return `
+                        <div class="saved-query-item">
+                            <div style="flex: 1;">
+                                <div class="query-text" style="color: #1f2937; font-size: 13px;">${escapeHtml(query.displayText)}</div>
+                                <div style="font-size: 11px; color: #9ca3af; margin-top: 3px;">${dateStr}</div>
+                            </div>
+                            <div class="query-actions">
+                                <button onclick="loadSavedQuery(${index})" class="success-btn">Load</button>
+                                <button onclick="deleteSavedQuery(${index})" class="danger-btn">Delete</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            };
+            
+            // Add loadSavedQuery function
+            window.loadSavedQuery = function(index) {
+                console.log('loadSavedQuery called, index:', index);
+                const query = savedQueries[index];
+                if (query) {
+                    queryExpression = JSON.parse(JSON.stringify(query.expression));
+                    updateQueryDisplay();
+                    if (typeof syncEditorWithBuilder === 'function') {
+                        syncEditorWithBuilder();
+                    }
+                    
+                    // Move loaded query to top (most recently used)
+                    const loaded = savedQueries.splice(index, 1)[0];
+                    loaded.createdAt = new Date().toISOString();
+                    savedQueries.unshift(loaded);
+                    if (typeof saveSavedQueries === 'function') {
+                        saveSavedQueries();
+                    }
+                    displaySavedQueries();
+                }
+            };
+            
+            // Add deleteSavedQuery function
+            window.deleteSavedQuery = function(index) {
+                console.log('deleteSavedQuery called, index:', index);
+                if (confirm('Delete this query?')) {
+                    savedQueries.splice(index, 1);
+                    if (typeof saveSavedQueries === 'function') {
+                        saveSavedQueries();
+                    }
+                    displaySavedQueries();
+                }
+            };
+            
+            // Add saveSavedQueries function
+            window.saveSavedQueries = async function() {
+                console.log('saveSavedQueries called');
+                try {
+                    const response = await fetch(`${API_URL}/saved-queries`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ queries: savedQueries })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('Failed to save to server');
+                    }
+                } catch (error) {
+                    console.error('Error saving to server, using localStorage:', error);
+                    // Fallback to localStorage if server fails
+                    localStorage.setItem('obsidianSavedQueries', JSON.stringify(savedQueries));
+                }
+            };
+            
+            // Add escapeHtml function
+            window.escapeHtml = function(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            };
+            
+            // Add displayResults function
+            window.displayResults = function(data) {
+                console.log('displayResults called with', data.count, 'results');
+                
+                const resultsSection = document.getElementById('resultsSection');
+                if (resultsSection) {
+                    resultsSection.style.display = 'block';
+                }
+                
+                // Create appropriate summary based on what was searched
+                const hasQuery = queryExpression.length > 0;
+                const targetFolder = document.getElementById('targetFolder').value;
+                const targetFile = document.getElementById('targetFile').value;
+                const vaultPath = document.getElementById('vaultPath').value;
+                
+                let summaryText = `<strong>Found ${data.count} matching files</strong>`;
+                
+                // Add scope information
+                if (targetFile) {
+                    const fileName = targetFile.split('/').pop();
+                    summaryText += ` in file "${fileName}"`;
+                } else if (targetFolder && targetFolder !== vaultPath) {
+                    const folderName = targetFolder.split('/').pop();
+                    summaryText += ` in folder "${folderName}"`;
+                } else {
+                    summaryText += ` in entire vault`;
+                }
+                
+                // Add query information
+                if (hasQuery) {
+                    summaryText += ` matching your query`;
+                }
+                
+                const resultsSummary = document.getElementById('resultsSummary');
+                if (resultsSummary) {
+                    resultsSummary.innerHTML = summaryText;
+                }
+                
+                const resultsDiv = document.getElementById('queryResults');
+                if (!resultsDiv) return;
+                
+                if (data.results.length === 0) {
+                    resultsDiv.innerHTML = '<div style="text-align: center; padding: 20px; color: #6b7280;">No matching files found</div>';
+                    return;
+                }
+                
+                // Create table
+                let tableHTML = `
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">
+                                    <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll()">
+                                </th>
+                                <th>Note Name</th>
+                                <th>Path</th>
+                                <th>Obsidian</th>
+                                <th>Category</th>
+                                <th>Subcategory</th>
+                                <th>Team</th>
+                                <th>Stakeholder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                data.results.forEach((file, index) => {
+                    const isSelected = selectedFiles.has(file.path);
+                    
+                    tableHTML += `
+                        <tr class="${isSelected ? 'selected' : ''}" id="row-${index}">
+                            <td>
+                                <input type="checkbox" 
+                                       class="file-checkbox" 
+                                       id="file-${index}" 
+                                       onchange="toggleFile('${file.path.replace(/'/g, "\\'")}', ${index})"
+                                       ${isSelected ? 'checked' : ''}>
+                            </td>
+                            <td>
+                                <div class="file-name">${escapeHtml(file.name)}</div>
+                            </td>
+                            <td>
+                                <div class="file-path">${escapeHtml(file.path)}</div>
+                            </td>
+                            <td>${formatPropertyValue(file.properties?.Obsidian)}</td>
+                            <td>${formatPropertyValue(file.properties?.Category)}</td>
+                            <td>${formatPropertyValue(file.properties?.Subcategory)}</td>
+                            <td>${formatPropertyValue(file.properties?.Team)}</td>
+                            <td>${formatPropertyValue(file.properties?.Stakeholder)}</td>
+                        </tr>
+                    `;
+                });
+                
+                tableHTML += `
+                        </tbody>
+                    </table>
+                `;
+                
+                resultsDiv.innerHTML = tableHTML;
+                if (typeof updateSelectAllCheckbox === 'function') {
+                    updateSelectAllCheckbox();
+                }
+            };
+            
+            // Add formatPropertyValue function
+            window.formatPropertyValue = function(value) {
+                if (value === undefined || value === null || value === '') {
+                    return '<span class="property-value empty">—</span>';
+                }
+                
+                if (Array.isArray(value)) {
+                    // Handle list properties
+                    const formatted = value.map(v => escapeHtml(String(v))).join(', ');
+                    return `<span class="property-value list" title="${formatted}">${formatted}</span>`;
+                }
+                
+                const stringValue = String(value);
+                
+                // Check if it's a wikilink
+                if (stringValue.startsWith('[[') && stringValue.endsWith(']]')) {
+                    return `<span class="property-value wikilink" title="${escapeHtml(stringValue)}">${escapeHtml(stringValue)}</span>`;
+                }
+                
+                return `<span class="property-value" title="${escapeHtml(stringValue)}">${escapeHtml(stringValue)}</span>`;
+            };
+            
+            // Add toggleFile function
+            window.toggleFile = function(path, index) {
+                console.log('toggleFile called:', path, index);
+                if (selectedFiles.has(path)) {
+                    selectedFiles.delete(path);
+                    const row = document.getElementById(`row-${index}`);
+                    if (row) row.classList.remove('selected');
+                } else {
+                    selectedFiles.add(path);
+                    const row = document.getElementById(`row-${index}`);
+                    if (row) row.classList.add('selected');
+                }
+                if (typeof updateSelectedCount === 'function') {
+                    updateSelectedCount();
+                }
+                if (typeof updateSelectAllCheckbox === 'function') {
+                    updateSelectAllCheckbox();
+                }
+            };
+            
+            // Add updateSelectedCount function
+            window.updateSelectedCount = function() {
+                const countElement = document.getElementById('selectedCount');
+                if (countElement) {
+                    countElement.textContent = selectedFiles.size;
+                }
+            };
+            
+            // Add checkConnection function if not already defined
+            window.checkConnection = async function() {
+                console.log('Checking connection to server...');
+                try {
+                    const response = await fetch(`${API_URL}/health`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log('Server health check:', data);
+                        const statusDiv = document.getElementById('connectionStatus');
+                        if (statusDiv) {
+                            statusDiv.innerHTML = '✅ Connected to server. Ready to query!';
+                            statusDiv.className = 'status success';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Connection error:', error);
+                    const statusDiv = document.getElementById('connectionStatus');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = '❌ Cannot connect to server. Please check the server is running.';
+                        statusDiv.className = 'status error';
+                    }
+                }
+            };
+            
+            // Initialize on page load
+            window.addEventListener('DOMContentLoaded', function() {
+                console.log('DOM loaded, initializing...');
+                checkConnection();
+                loadSavedQueries();
+            });
+            
+            console.log('Functions defined, waiting for page load...');
+        })();
+    </script>
+</body>
+</html>

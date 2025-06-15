@@ -1,0 +1,140 @@
+[
+  {
+    "createdAt": "2025-06-15T18:10:19.186Z",
+    "displayText": "Stakeholder does not exist AND Subcategory does not exist",
+    "expression": [
+      {
+        "operator": "notExists",
+        "property": "Stakeholder",
+        "type": "condition",
+        "value": ""
+      },
+      {
+        "type": "operator",
+        "value": "AND"
+      },
+      {
+        "operator": "notExists",
+        "property": "Subcategory",
+        "type": "condition",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-15T16:44:54.553Z",
+    "displayText": "Category equals \"Security\"",
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "Security"
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-14T23:54:01.436Z",
+    "displayText": "Stakeholder equals \"[[\ud83e\udd1d 3rd Pty Partners]]\"",
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Stakeholder",
+        "type": "condition",
+        "value": "[[\ud83e\udd1d 3rd Pty Partners]]"
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-14T23:53:38.228Z",
+    "displayText": "Category equals \"[[\ud83c\udfe2 Companies]]\"",
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "[[\ud83c\udfe2 Companies]]"
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-14T23:51:57.923Z",
+    "displayText": "Stakeholder does not exist",
+    "expression": [
+      {
+        "operator": "notExists",
+        "property": "Stakeholder",
+        "type": "condition",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-14T23:06:04.089Z",
+    "displayText": "Team contains \"[[\ud83c\udfe1 Garden House]]\"",
+    "expression": [
+      {
+        "operator": "contains",
+        "property": "Team",
+        "type": "condition",
+        "value": "[[\ud83c\udfe1 Garden House]]"
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-14T15:08:33.949Z",
+    "displayText": "Subcategory contains \"[[\ud83c\udfe1 Garden House]]\"",
+    "expression": [
+      {
+        "operator": "contains",
+        "property": "Subcategory",
+        "type": "condition",
+        "value": "[[\ud83c\udfe1 Garden House]]"
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-12T21:44:05.206Z",
+    "displayText": "Category equals \"Universities\"",
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "Universities"
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-12T21:25:06.745Z",
+    "displayText": "Obsidian equals \"[[\ud83e\udd8b Categories]]\" AND Category equals \"[[\ud83c\udfe2 Companies]]\" AND Stakeholder equals \"[[\ud83d\udc54 Customers]]\"",
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Obsidian",
+        "type": "condition",
+        "value": "[[\ud83e\udd8b Categories]]"
+      },
+      {
+        "type": "operator",
+        "value": "AND"
+      },
+      {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "[[\ud83c\udfe2 Companies]]"
+      },
+      {
+        "type": "operator",
+        "value": "AND"
+      },
+      {
+        "operator": "equals",
+        "property": "Stakeholder",
+        "type": "condition",
+        "value": "[[\ud83d\udc54 Customers]]"
+      }
+    ]
+  }
+]
