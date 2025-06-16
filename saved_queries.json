@@ -1,5 +1,17 @@
 [
   {
+    "expression": [
+      {
+        "type": "condition",
+        "property": "Category",
+        "operator": "equals",
+        "value": "[[\ud83d\udeb5 Sanity]]"
+      }
+    ],
+    "displayText": "Category equals \"[[\ud83d\udeb5 Sanity]]\"",
+    "createdAt": "2025-06-16T01:18:20.982Z"
+  },
+  {
     "createdAt": "2025-06-15T18:10:19.186Z",
     "displayText": "Stakeholder does not exist AND Subcategory does not exist",
     "expression": [

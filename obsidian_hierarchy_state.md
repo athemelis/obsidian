@@ -1,4 +1,4 @@
-# Obsidian Vault Organization Project State
+# Obsidian Vault Hierarchy and Organization - Project State Document
 
 ## Project Overview
 You're building a hierarchical organization system for your Obsidian vault using frontmatter YAML properties, Dataview, and DataviewJS queries.

@@ -6970,5 +6970,286 @@
       "target_file": "",
       "has_query": true
     }
+  },
+  {
+    "timestamp": "2025-06-15T16:59:38.095694",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "equals",
+          "value": "Sanity"
+        }
+      ],
+      "results_count": 9,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-15T17:01:22.525370",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "Sanity",
+      "new_value": "[[\ud83d\udeb5 Sanity]]",
+      "files_count": 9,
+      "modified_count": 9,
+      "modifications": [
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Favero Assioma DUO pedals.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Dynaplug Racer Pro.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Sram.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Lezyne.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Pro Bike Tool.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Hammerhead Karoo.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Garmin.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Tacx.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Enve Fraye.md",
+          "property": "Category",
+          "before": "Sanity",
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250615_170101"
+    }
+  },
+  {
+    "timestamp": "2025-06-15T17:01:34.648512",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "equals",
+          "value": "Sanity"
+        }
+      ],
+      "results_count": 0,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-15T17:02:01.278077",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "equals",
+          "value": "[[\ud83d\udeb5 Sanity]]"
+        }
+      ],
+      "results_count": 11,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-15T17:03:17.273469",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+      ],
+      "files_count": 9,
+      "modified_count": 9,
+      "modifications": [
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Favero Assioma DUO pedals.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Dynaplug Racer Pro.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Sram.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Lezyne.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Pro Bike Tool.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Hammerhead Karoo.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Garmin.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Tacx.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\ud83d\udeb4\u200d\u2640\ufe0f champion/Enve Fraye.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udeb4\u200d\u2640\ufe0f Sports]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250615_170311"
+    }
+  },
+  {
+    "timestamp": "2025-06-15T18:18:42.128580",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "equals",
+          "value": "Greece"
+        }
+      ],
+      "results_count": 1,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-15T18:23:25.858013",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "equals",
+          "value": "Assets"
+        }
+      ],
+      "results_count": 1,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
   }
 ]
