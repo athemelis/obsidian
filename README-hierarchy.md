@@ -5,7 +5,7 @@ Date modified: 06/18/2025
 Version: 2.0
 ---
 
-# Obsidian Vault Hierarchy and Organization - Complete Documentation
+# README-hierarchy.md - Obsidian Vault Hierarchy Documentation
 
 ## Overview
 
@@ -35,7 +35,24 @@ Stakeholder:                      # Optional, your custom property
 
 ## File Inventory
 
-### 1. **hierarchy.md** (`🔲 Framework/💜 Obsidian Tools/hierarchy.md`)
+### 1. **README-hierarchy.md** (`🔲 Framework/💜 Obsidian Tools/README-hierarchy.md`)
+**Purpose**: Complete documentation for the hierarchy system. This file you're reading now serves as the operations manual for the entire system.
+
+**What it contains**:
+- System overview and architecture
+- Complete file inventory and descriptions
+- Current hierarchy structure
+- Update instructions (manual and automated)
+- Troubleshooting guide
+- Maintenance schedule
+
+**How to use it**:
+- Reference for understanding the system
+- Copy prompt templates for automated updates
+- Follow maintenance schedules
+- Use troubleshooting section when issues arise
+
+### 2. **hierarchy.md** (`🔲 Framework/💜 Obsidian Tools/hierarchy.md`)
 **Purpose**: Defines the valid categories and subcategories for your entire vault. This is the single source of truth for your hierarchy.
 
 **What it shows**:
@@ -48,7 +65,7 @@ Stakeholder:                      # Optional, your custom property
 - The "Category Distribution" table shows note counts per category
 - The "Subcategory Usage Statistics" shows which subcategories are most/least used
 
-### 2. **dataview-helpers.md** (`🔲 Framework/💜 Obsidian Tools/dataview-helpers.md`)
+### 3. **dataview-helpers.md** (`🔲 Framework/💜 Obsidian Tools/dataview-helpers.md`)
 **Purpose**: Contains reusable helper functions for all DataviewJS queries. Ensures consistency across all dashboards and validators.
 
 **What it contains**:
@@ -64,7 +81,7 @@ Stakeholder:                      # Optional, your custom property
 - Reference the usage examples at the bottom of the file
 - Use the function reference section to understand each function
 
-### 3. **category-dashboard.md** 
+### 4. **category-dashboard.md** (`🔲 Framework/💜 Obsidian Tools/category-dashboard.md`)
 **Purpose**: Main dashboard for viewing and analyzing your categorized notes.
 
 **What it shows**:
@@ -81,7 +98,7 @@ Stakeholder:                      # Optional, your custom property
 - Teams Overview shows team composition at a glance
 - Category Health Check identifies notes needing updates
 
-### 4. **hierarchy-validator.md**
+### 5. **hierarchy-validator.md** (`🔲 Framework/💜 Obsidian Tools/hierarchy-validator.md`)
 **Purpose**: Comprehensive validation tool to ensure all notes comply with the hierarchy.
 
 **What it shows**:
@@ -96,20 +113,12 @@ Stakeholder:                      # Optional, your custom property
 - Use the export list to create tasks for fixing issues
 - Check Missing Pages to identify pages to create
 
-### 5. **Team Note Template** (Enhanced)
-**Purpose**: Template for creating team pages that automatically show team members.
-
-**Features**:
-- Auto-populates with institutions and people assigned to the team
-- Shows member counts and statistics
-- Displays recent team activity
-- Lists members who belong to multiple teams
-
-**How to use it**:
-1. Create a new note for a team
-2. Copy the template content
-3. Replace `TEAM_TYPE` with the appropriate subcategory
-4. The member lists will auto-populate
+### Note: Team Template
+The **Enhanced Team Note Template** is provided in the artifacts during the setup process but is not a separate file in the vault. You can find the template content in the setup artifacts or create your own template using the structure provided. The template includes:
+- Auto-populating member lists
+- Team statistics
+- Recent activity tracking
+- Multi-team membership display
 
 ## Current Hierarchy Structure
 
@@ -165,10 +174,11 @@ The hierarchy system involves multiple files that need to stay synchronized. To 
 ```
 I need to update my Obsidian hierarchy system. Here are my current files:
 
-1. hierarchy.md (attached)
-2. dataview-helpers.md (attached)
-3. category-dashboard.md (attached)
-4. hierarchy-validator.md (attached)
+1. README-hierarchy.md (attached) - The main documentation
+2. hierarchy.md (attached) - The hierarchy definition
+3. dataview-helpers.md (attached) - Helper functions
+4. category-dashboard.md (attached) - Main dashboard
+5. hierarchy-validator.md (attached) - Validation tool
 
 Changes needed:
 - [Describe your changes here, e.g., "Add new category [[🎯 Projects]] with subcategories [[📅 Active]], [[✅ Completed]], [[🔄 On Hold]]"]
@@ -177,15 +187,16 @@ Changes needed:
 
 Please:
 1. Update all files to reflect these changes
-2. Ensure all helper functions stay synchronized
-3. Maintain the current version numbers and increment if needed
-4. Provide the complete updated files
-5. List any notes that will need manual updates based on these changes
+2. Update the README-hierarchy.md documentation to reflect the new structure
+3. Ensure all helper functions stay synchronized
+4. Maintain the current version numbers and increment if needed
+5. Provide the complete updated files
+6. List any notes that will need manual updates based on these changes
 ```
 
 #### Using the Update Service
 
-1. **Prepare your files**: Have all 4 core files ready to attach
+1. **Prepare your files**: Have all 5 core files ready to attach
 2. **Describe changes clearly**: Be specific about what needs to change
 3. **Review the updates**: Check all provided files before replacing
 4. **Run the validator**: After updating, run hierarchy-validator.md to find affected notes
@@ -415,12 +426,13 @@ Current files attached. Please update all files and list affected notes.
 
 When updating the hierarchy system, these files should be kept in sync:
 
-| File | Current Version | Last Modified |
-|------|----------------|---------------|
-| hierarchy.md | 1.0 | 06/18/2025 |
-| dataview-helpers.md | 1.0 | 06/18/2025 |
-| category-dashboard.md | 1.0 | 06/18/2025 |
-| hierarchy-validator.md | 1.0 | 06/18/2025 |
+| File | Current Version | Last Modified | Location |
+|------|----------------|---------------|----------|
+| README-hierarchy.md | 2.0 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
+| hierarchy.md | 1.0 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
+| dataview-helpers.md | 1.0 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
+| category-dashboard.md | 1.0 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
+| hierarchy-validator.md | 1.0 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
 
 **Version Update Rules:**
 - Minor changes (fix typos, adjust formatting): Keep same version
