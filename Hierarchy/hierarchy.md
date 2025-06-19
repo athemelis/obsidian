@@ -2,8 +2,8 @@
 aliases: [Hierarchy, Categories]
 Category: "[[🔲 Frameworks]]"
 Subcategory: "[[💜 Obsidian Tools]]"
-Date modified: 01/23/2025
-Version: 1.0
+Date modified: 06/18/2025
+Version: 1.1
 ---
 
 # Vault Hierarchy Definition
@@ -37,7 +37,8 @@ const hierarchy = {
     "[[🚴‍♀️ Work]]",
     "[[🚴‍♀️ Old Brompton Road (OBR)]]",
     "[[🚴‍♀️ Killarney Road]]",
-    "[[🏡 Garden House]]"
+    "[[🏡 Garden House]]",
+    "[[🚴‍♀️ Santa Maura]]"
   ],
   "[[🚵 Sanity]]": [
     "[[🐧 Linux]]",
@@ -126,7 +127,8 @@ const hierarchy = {
     "[[🚴‍♀️ Work]]",
     "[[🚴‍♀️ Old Brompton Road (OBR)]]",
     "[[🚴‍♀️ Killarney Road]]",
-    "[[🏡 Garden House]]"
+    "[[🏡 Garden House]]",
+    "[[🚴‍♀️ Santa Maura]]"
   ],
   "[[🚵 Sanity]]": [
     "[[🐧 Linux]]",

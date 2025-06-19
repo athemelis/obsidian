@@ -2,7 +2,7 @@
 Category: "[[🔲 Frameworks]]"
 Subcategory: "[[💜 Obsidian Tools]]"
 Date modified: 06/18/2025
-Version: 1.0
+Version: 1.1
 ---
 
 # Hierarchy Validator
@@ -65,7 +65,8 @@ const validHierarchy = {
     "[[🚴‍♀️ Work]]",
     "[[🚴‍♀️ Old Brompton Road (OBR)]]",
     "[[🚴‍♀️ Killarney Road]]",
-    "[[🏡 Garden House]]"
+    "[[🏡 Garden House]]",
+    "[[🚴‍♀️ Santa Maura]]"
   ],
   "[[🚵 Sanity]]": [
     "[[🐧 Linux]]",
@@ -258,7 +259,8 @@ const validHierarchy = {
     "[[🚴‍♀️ Work]]",
     "[[🚴‍♀️ Old Brompton Road (OBR)]]",
     "[[🚴‍♀️ Killarney Road]]",
-    "[[🏡 Garden House]]"
+    "[[🏡 Garden House]]",
+    "[[🚴‍♀️ Santa Maura]]"
   ],
   "[[🚵 Sanity]]": [
     "[[🐧 Linux]]",
@@ -476,7 +478,8 @@ const validHierarchy = {
     "[[🚴‍♀️ Work]]",
     "[[🚴‍♀️ Old Brompton Road (OBR)]]",
     "[[🚴‍♀️ Killarney Road]]",
-    "[[🏡 Garden House]]"
+    "[[🏡 Garden House]]",
+    "[[🚴‍♀️ Santa Maura]]"
   ],
   "[[🚵 Sanity]]": [
     "[[🐧 Linux]]",
