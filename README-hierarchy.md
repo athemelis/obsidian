@@ -1,25 +1,39 @@
 ---
 Category: "[[🔲 Frameworks]]"
-Subcategory: "[[💜 Obsidian Tools]]"
-Date modified: 06/18/2025
-Version: 2.1
+Subcategory:
+  - "[[💜 Obsidian Tools]]"
+Date modified: 06/19/2025
+Version: 2
 ---
+> [!Success] README-hierarchy.md - Obsidian Vault Hierarchy Documentation
 
-# README-hierarchy.md - Obsidian Vault Hierarchy Documentation
+# Overview
 
-## Overview
+> [!Note] Summary
+> This readme describes a comprehensive framework for organizing notes in Obsidian using Categories, Subcategories, and Teams. This solution defines the structure and provides consistent usage, powerful query capabilities, and automated validation. 
+> The solution uses frontmatter YAML properties, Dataview, and DataviewJS queries to organize and validate your notes.
+> It should be used in conjunction with [[README-tools]] which is a set of tools designed to make bulk updates to the hierarchy.
 
-This document provides comprehensive documentation for the hierarchical organization system in your Obsidian vault. The system uses frontmatter YAML properties, Dataview, and DataviewJS queries to organize and validate your notes.
+# Table of Contents
 
-## System Architecture
+1. [[#Overview]]
+2. [[#Core Hierarchy and Properties]]
+3. [[#Quick Start]]
+4. [[#Using the System]]
+5. [[#Common Issues]]
+6. [[#File Inventory]]
+7. [[#Version Control]]
+8. [[#Maintenance Schedule]]
 
-### Core Concepts
+# Core Hierarchy and Properties
+
+## Definitions and Schema
+
 1. **Categories**: Top-level organization using wikilinks with emojis (e.g., `[[🏛️ Institutions]]`)
 2. **Subcategories**: Second-level organization, can be single or multiple values per note
 3. **Team Assignments**: Cross-linking between Institutions/People and Teams using the Team property
-4. **Properties**: Standardized frontmatter fields (Category, Subcategory, Team, etc.)
+4. **Properties**: Standardized Frontmatter fields (Category, Subcategory, Team, etc.)
 
-### Property Schema
 ```yaml
 ---
 Category: "[[🏛️ Institutions]]"  # Required, single value
@@ -33,94 +47,42 @@ Stakeholder:                      # Optional, your custom property
 ---
 ```
 
-## File Inventory
+## Property Rules
 
-### 1. **README-hierarchy.md** (`🔲 Framework/💜 Obsidian Tools/README-hierarchy.md`)
-**Purpose**: Complete documentation for the hierarchy system. This file you're reading now serves as the operations manual for the entire system.
+1. **Always use wikilink format**: `"[[Name]]"` not just `"Name"`
+2. **Categories are mutually exclusive**: Each note has exactly one category
+3. **Subcategories must match hierarchy**: Only use valid subcategories for each category
+4. **Teams are only for**: Institutions and People notes
+5. **Multiple values**: Subcategory and Team can have multiple values as a list
 
-**What it contains**:
-- System overview and architecture
-- Complete file inventory and descriptions
-- Current hierarchy structure
-- Update instructions (manual and automated)
-- Troubleshooting guide
-- Maintenance schedule
+## Example Frontmatter
 
-**How to use it**:
-- Reference for understanding the system
-- Copy prompt templates for automated updates
-- Follow maintenance schedules
-- Use troubleshooting section when issues arise
+```yaml
+---
+# Institution with team
+Category: "[[🏛️ Institutions]]"
+Subcategory: "[[👔 Customers]]"
+Team: "[[🚴‍♀️ Work]]"
+---
 
-### 2. **hierarchy.md** (`🔲 Framework/💜 Obsidian Tools/hierarchy.md`)
-**Purpose**: Defines the valid categories and subcategories for your entire vault. This is the single source of truth for your hierarchy.
+# Person with multiple teams
+Category: "[[👥 People]]"
+Subcategory: "[[🧑‍🧑‍🧒‍🧒 Family]]"
+Team: 
+  - "[[🚴‍♀️ Work]]"
+  - "[[👩‍⚕️ Medical]]"
+---
 
-**What it shows**:
-- Complete hierarchy structure with all valid categories and subcategories
-- Category distribution statistics (how many notes in each category)
-- Subcategory usage statistics
+# Framework tool
+Category: "[[🔲 Frameworks]]"
+Subcategory: "[[💜 Obsidian Tools]]"
+---
+```
 
-**How to read it**:
-- The "Valid Hierarchies" section shows the complete structure
-- The "Category Distribution" table shows note counts per category
-- The "Subcategory Usage Statistics" shows which subcategories are most/least used
+## Reference Hierarchy
 
-### 3. **dataview-helpers.md** (`🔲 Framework/💜 Obsidian Tools/dataview-helpers.md`)
-**Purpose**: Contains reusable helper functions for all DataviewJS queries. Ensures consistency across all dashboards and validators.
-
-**What it contains**:
-- `getLinkName()`: Extracts display names from link objects
-- `normalizeToArray()`: Handles single/array values consistently
-- `getSubcategoryNames()`: Processes subcategory properties
-- `matchesHierarchyValue()`: Compares values regardless of format
-- `getValidHierarchy()`: Returns the complete hierarchy definition
-- Complete documentation for each function
-
-**How to use it**:
-- Copy the functions you need into your DataviewJS blocks
-- Reference the usage examples at the bottom of the file
-- Use the function reference section to understand each function
-
-### 4. **category-dashboard.md** (`🔲 Framework/💜 Obsidian Tools/category-dashboard.md`)
-**Purpose**: Main dashboard for viewing and analyzing your categorized notes.
-
-**What it shows**:
-- **Quick Stats**: Total notes, percentages with subcategories/teams
-- **Browse by Category**: Detailed breakdown by category and subcategory
-- **Teams Overview**: All teams with member counts
-- **Recent Activity**: Latest modified notes
-- **Missing Subcategories**: Notes that need subcategories added
-- **Category Health Check**: Identifies formatting issues
-
-**How to read it**:
-- Check Quick Stats for overall vault health
-- Use Browse by Category to navigate your hierarchy
-- Teams Overview shows team composition at a glance
-- Category Health Check identifies notes needing updates
-
-### 5. **hierarchy-validator.md** (`🔲 Framework/💜 Obsidian Tools/hierarchy-validator.md`)
-**Purpose**: Comprehensive validation tool to ensure all notes comply with the hierarchy.
-
-**What it shows**:
-- **Validation Summary**: Overview of all issues found
-- **Subcategory Usage Report**: Which subcategories are unused
-- **Team Assignment Validation**: Invalid team assignments
-- **Missing Pages**: Category/subcategory pages that need creation
-
-**How to read it**:
-- Start with Validation Summary for issue counts
-- Review detailed issues grouped by type
-- Use the export list to create tasks for fixing issues
-- Check Missing Pages to identify pages to create
-
-### Note: Team Template
-The **Enhanced Team Note Template** is provided in the artifacts during the setup process but is not a separate file in the vault. You can find the template content in the setup artifacts or create your own template using the structure provided. The template includes:
-- Auto-populating member lists
-- Team statistics
-- Recent activity tracking
-- Multi-team membership display
-
-## Current Hierarchy Structure
+Top Level (L1) is categories.
+Second Level (L2) is subcategories.
 
 ```
 [[🏛️ Institutions]]
@@ -135,10 +97,12 @@ The **Enhanced Team Note Template** is provided in the artifacts during the setu
 └── [[💼 Employment]]
 
 [[👥 People]]
-├── Family
-├── Friends
-├── Work
-└── Pets
+├── [[🧑‍🧑‍🧒‍🧒 Family]]
+├── [[👯 Friends]]
+├── [[💪 Work]]
+├── [[🐶 Pets]]
+├── [[🧾 Providers]]
+└── [[👩‍🎓 Applicant Tracker]]
 
 [[🚴‍♀️ Teams]]
 ├── [[👩‍⚕️ Medical]]
@@ -162,286 +126,363 @@ The **Enhanced Team Note Template** is provided in the artifacts during the setu
 └── [[💜 Obsidian Tools]]
 ```
 
-## How to Update the Hierarchy
+# Quick Start
 
-### Automated Update Process (Recommended)
+## 1. Add to Your Notes
 
-The hierarchy system involves multiple files that need to stay synchronized. To avoid manual errors, use this automated approach:
+Add these properties to your note's frontmatter:
 
-#### Quick Update with AI Assistant
+```yaml
+---
+Category: "[[🏛️ Institutions]]"
+Subcategory: "[[👔 Customers]]"
+Team: "[[🚴‍♀️ Work]]"
+---
+```
 
-**Copy this prompt when you need to update your hierarchy:**
+## 2. View Dashboard
+
+Open `hierarchy-dashboard.md` to see:
+
+1. 📊 Summary Categorized and Uncategorized Notes
+2. 🕐 Recent Activity
+3. 📁 Category Distribution
+4. 📈 Subcategory Usage (with Most Used and Unused subsections)
+5. ⚠️ Validation Issues (or ✅ All Notes Valid)
+6. 📝 Notes Missing Subcategories
+7. 👥 Team Assignments
+8. ❌ Team Assignment Validation
+9. Quick Queries
+
+
+# Best Practices
+
+1. **Always update the hierarchy first** - It's your source of truth
+2. **Check for Validation issues** after making changes to find issues
+3. **Use exact wikilink format** including emojis and brackets
+4. Use your [[README-tools]] Obisidian tool for bulk operations:
+	- It **keeps backups** before bulk operations
+	- **It allows you to test with a few notes** before bulk updates
+5. Consistency
+	- **Always use wikilinks**: `"[[Name]]"` format
+	- **Match emoji exactly**: Copy from hierarchy definition
+	- **Case sensitive**: Use exact capitalization
+6. Organization
+	- **One category per note**: Don't mix categories
+	- **Subcategory matches category**: Only valid combinations
+	- **Teams for people/institutions**: Not for other categories
+7. Maintenance
+	- **Run validator weekly**: Catch issues early
+	- **Update bulk notes**: Use query tool for changes
+	- **Check dashboard regularly**: Monitor vault health
+8. Templates
+	- Create templates for each category:
+
+```yaml
+---
+# Institution Template
+Category: "[[🏛️ Institutions]]"
+Subcategory: "[[null]]"
+Team: 
+Status: Active
+---
+
+# Person Template  
+Category: "[[👥 People]]"
+Subcategory: "[[null]]"
+Team:
+---
+```
+
+# How to Update the Hierarchy
+
+Here are prompts you can use for future updates to your hierarchy dashboard:
+
+## 1. General Maintenance Prompt (for any updates)
 
 ```
-I need to update my Obsidian hierarchy system. Here are my current files:
+I need to update my hierarchy-dashboard.md file. Please make the following changes while:
+- Keeping the single definition section at the top with the hierarchy constant
+- Maintaining all helper functions (getLinkName, normalizeToArray, getSubcategoryNames, matchesHierarchyValue) in their current location
+- Preserving the single-pass data collection approach for performance
+- Keeping all data structures and stats objects as they are
+- Not duplicating any code or definitions
 
-1. README-hierarchy.md (attached) - The main documentation
-2. hierarchy.md (attached) - The hierarchy definition
-3. dataview-helpers.md (attached) - Helper functions
-4. category-dashboard.md (attached) - Main dashboard
-5. hierarchy-validator.md (attached) - Validation tool
+Changes needed: [describe your specific changes]
+```
+
+## 2. Maintaining Table Order Prompt
+
+```
+I need to update my hierarchy dashboard. Please keep the exact same order of sections and tables:
+1. 📊 Summary Categorized and Uncategorized Notes
+2. 🕐 Recent Activity
+3. 📁 Category Distribution
+4. 📈 Subcategory Usage (with Most Used and Unused subsections)
+5. ⚠️ Validation Issues (or ✅ All Notes Valid)
+6. 📝 Notes Missing Subcategories
+7. 👥 Team Assignments
+8. ❌ Team Assignment Validation
+
+Changes needed: [describe your specific changes]
+```
+
+## 3. Version Update Prompt
+
+```
+I need to update my hierarchy dashboard version number. Current version is X.X.
+
+Update rules:
+- Minor changes (typos, formatting, small fixes): Keep same version
+- Feature additions or structural changes: Increment by 0.1 (e.g., 2.1 → 2.2)
+- Major overhaul or breaking changes: Increment by 1.0 (e.g., 2.1 → 3.0)
+
+Changes I'm making: [describe changes]
+Please update the version number accordingly and update the Date modified to today's date.
+```
+
+## 4. Adding/Removing Categories and Subcategories Prompt
+
+```
+I need to update the hierarchy in my dashboard. Please update ONLY the hierarchy constant at the top of the DataviewJS block.
+
+Current hierarchy has these categories:
+- [[🏛️ Institutions]]
+- [[👥 People]]
+- [[🚴‍♀️ Teams]]
+- [[🚵 Sanity]]
+- [[🔲 Frameworks]]
 
 Changes needed:
-- [Describe your changes here, e.g., "Add new category [[🎯 Projects]] with subcategories [[📅 Active]], [[✅ Completed]], [[🔄 On Hold]]"]
-- [Or: "Rename [[🏢 Companies]] to [[🏛️ Institutions]]"]
-- [Or: "Remove subcategory [[👐 1st Pty Partners]]"]
+[Option A] ADD new category: [[🎯 Projects]] with subcategories: [[📅 Active]], [[✅ Completed]], [[🔄 On Hold]]
+[Option B] ADD new subcategory: [[🏠 Real Estate]] to [[🏛️ Institutions]]
+[Option C] REMOVE category: [[🚵 Sanity]] and all its subcategories
+[Option D] REMOVE subcategory: [[🐶 Pets]] from [[👥 People]]
+[Option E] RENAME category: [[🚵 Sanity]] to [[🧘 Wellness]]
 
 Please:
-1. Update all files to reflect these changes
-2. Update the README-hierarchy.md documentation to reflect the new structure
-3. Ensure all helper functions stay synchronized
-4. Maintain the current version numbers and increment if needed
-5. Provide the complete updated files
-6. List any notes that will need manual updates based on these changes
+1. Update only the hierarchy constant
+2. Increment version by 0.1 for subcategory changes, 1.0 for category changes
+3. Update Date modified to today
+4. Keep all other code exactly the same
 ```
 
-#### Using the Update Service
+## 5. Adding/Removing Teams Prompt
 
-1. **Prepare your files**: Have all 5 core files ready to attach
-2. **Describe changes clearly**: Be specific about what needs to change
-3. **Review the updates**: Check all provided files before replacing
-4. **Run the validator**: After updating, run hierarchy-validator.md to find affected notes
-5. **Update affected notes**: Use the validator's export list to track progress
+```
+I need to update the valid teams in my hierarchy dashboard. Please modify ONLY the Teams section in the hierarchy constant.
 
-### Semi-Automated Bulk Updates
+Current teams under [[🚴‍♀️ Teams]]:
+- [[👩‍⚕️ Medical]]
+- [[🚴‍♀️ Work]]
+- [[🚴‍♀️ Old Brompton Road (OBR)]]
+- [[🚴‍♀️ Killarney Road]]
+- [[🏡 Garden House]]
+- [[🚴‍♀️ Santa Maura]]
 
-For updating many notes after hierarchy changes:
+Changes needed:
+[Option A] ADD new team: [[🎨 Creative Team]]
+[Option B] REMOVE team: [[🚴‍♀️ Killarney Road]]
+[Option C] RENAME team: [[🚴‍♀️ Work]] to [[💼 Corporate Team]]
 
-#### Create a Migration Helper Note
-
-Create a temporary note called `migration-helper.md`:
-
-```dataviewjs
-// Find all notes that need updating
-const oldValue = "[[🏢 Companies]]";  // Change this
-const newValue = "[[🏛️ Institutions]]";  // Change this
-
-const affectedNotes = dv.pages('')
-  .where(p => p.Category === oldValue)
-  .sort(p => p.file.name);
-
-dv.header(3, `Found ${affectedNotes.length} notes to update`);
-
-// Create task list for tracking
-dv.header(4, "Migration Checklist");
-const tasks = affectedNotes.map(p => 
-  `- [ ] Update ${p.file.link}: Category from "${oldValue}" to "${newValue}"`
-);
-
-dv.paragraph("```");
-dv.paragraph(tasks.join("\n"));
-dv.paragraph("```");
-
-// Show sample frontmatter for reference
-dv.header(4, "Sample Updated Frontmatter");
-dv.paragraph("```yaml");
-dv.paragraph(`Category: "${newValue}"`);
-dv.paragraph("```");
+Please:
+1. Update only the [[🚴‍♀️ Teams]] section in the hierarchy constant
+2. Keep all other categories and subcategories unchanged
+3. Increment version by 0.1
+4. Update Date modified to today
 ```
 
-### Manual Update Process (If Needed)
+## Combined Update Prompt Template
 
-### Adding a New Category
-
-1. **Update hierarchy.md**:
-   ```javascript
-   const hierarchy = {
-     // ... existing categories ...
-     "[[🆕 New Category]]": [
-       "Subcategory 1",
-       "[[📊 Subcategory 2]]"
-     ]
-   };
-   ```
-
-2. **Update dataview-helpers.md** - Add the new category to the `getValidHierarchy()` function
-
-3. **Create the category page**:
-   ```yaml
-   ---
-   Category: "[[🆕 New Category]]"
-   Subcategory: "[[🆕 New Category]]"  # Self-referential
-   Date modified: 06/18/2025
-   Version: 1.0
-   ---
-   # 🆕 New Category
-   ```
-
-4. **Update all affected files**:
-   - category-dashboard.md (if you've customized it)
-   - hierarchy-validator.md (if you've customized it)
-
-### Adding a New Subcategory
-
-1. **Update hierarchy.md** - Add to the appropriate category:
-   ```javascript
-   "[[🏛️ Institutions]]": [
-     // ... existing subcategories ...
-     "[[🆕 New Subcategory]]"
-   ]
-   ```
-
-2. **Update dataview-helpers.md** - Ensure the hierarchy in `getValidHierarchy()` matches
-
-3. **Create the subcategory page** (if using wikilinks):
-   ```yaml
-   ---
-   Category: "[[🏛️ Institutions]]"
-   Subcategory: "[[🆕 New Subcategory]]"
-   ---
-   ```
-
-### Renaming Categories or Subcategories
-
-**⚠️ Warning**: This is a major operation that affects many notes.
-
-1. **Create a backup** of your vault first!
-
-2. **Update these files in order**:
-   - hierarchy.md
-   - dataview-helpers.md
-   - Any category/subcategory pages
-
-3. **Use the validator** to find all affected notes:
-   - Run hierarchy-validator.md
-   - Export the issues list
-   - Update each affected note
-
-4. **Bulk update approach**:
-   - Use Obsidian's Search & Replace (Ctrl/Cmd + Shift + F)
-   - Search: `"[[🏢 Old Name]]"`
-   - Replace: `"[[🆕 New Name]]"`
-   - Review changes before applying
-
-### Best Practices
-
-1. **Always update hierarchy.md first** - It's your source of truth
-2. **Run the validator** after making changes to find issues
-3. **Use exact wikilink format** including emojis and brackets
-4. **Keep backups** before bulk operations
-5. **Test with a few notes** before bulk updates
-
-### Common Tasks
-
-#### Finding Notes Without Subcategories
-1. Open category-dashboard.md
-2. Check the "Missing Subcategories" section
-3. Click on note links to add subcategories
-
-#### Validating Team Assignments
-1. Open hierarchy-validator.md
-2. Check "Team Assignment Validation" section
-3. Fix any invalid team assignments shown
-
-#### Checking Unused Subcategories
-1. Open hierarchy-validator.md
-2. Review "Unused Subcategories" section
-3. Consider if these subcategories should be removed or if notes should be added
-
-#### Creating a New Team
-1. Create a note with the team name
-2. Add frontmatter:
-   ```yaml
-   Category: "[[🚴‍♀️ Teams]]"
-   Subcategory: "[[Appropriate Team Type]]"
-   ```
-3. Assign members by adding `Team: - "[[Team Name]]"` to their notes
-
-## Quick Reference Cards
-
-### Adding a New Category - Prompt Template
 ```
-Add a new category to my Obsidian hierarchy:
-- Category name: [[emoji Name]]
-- Subcategories: [list them]
-- Should it allow Team assignments: [yes/no]
+I need to update my hierarchy-dashboard-v2.md. Here's my current file: [attach file]
 
-Attached are my current hierarchy files. Please update all necessary files.
+Updates needed:
+1. Categories: [list any category additions/removals/renames]
+2. Subcategories: [list any subcategory changes]
+3. Teams: [list any team changes]
+4. Other changes: [list any other modifications]
+
+Please:
+- Update ONLY the hierarchy constant for hierarchy changes
+- Maintain all existing code structure and functions
+- Keep the same table order
+- Update version: +0.1 for minor changes, +1.0 for major changes
+- Update Date modified to [today's date]
+- Preserve the single-pass data collection approach
+- Don't duplicate any definitions or functions
+
+Return the complete updated file.
 ```
 
-### Adding a New Subcategory - Prompt Template
-```
-Add new subcategory "[name]" to category "[[category]]" in my Obsidian hierarchy.
-Current files attached. Please update all necessary files.
-```
+## Quick Reference for Changes
 
-### Renaming Category/Subcategory - Prompt Template
-```
-Rename in my Obsidian hierarchy:
-- Old: [[old name]]
-- New: [[new name]]
+When making your updates, remember:
 
-Current files attached. Please update all files and list affected notes.
-```
+- **Hierarchy changes**: Only modify the `const hierarchy = {...}` at the top
+- **Performance**: Keep the single-pass data collection intact
+- **Functions**: Don't modify or duplicate the helper functions
+- **Order**: Maintain the existing section order
+- **Version**: Follow the increment rules (0.1 for minor, 1.0 for major)
 
-### "Browse by Category" shows wrong counts
-- Check if Category values match exactly (including spaces after emojis)
-- Run validator to identify mismatched categories
-- Ensure wikilinks are properly formatted
+These prompts will help ensure consistent, maintainable updates to your hierarchy dashboard while preserving its optimized structure.
 
-### Team members not showing up
-- Verify Team property uses wikilinks: `Team: - "[[🏡 Garden House]]"`
-- Check team note filename matches exactly
-- Ensure Team is an array even for single values
+# Migration Guide
 
-### Validator shows many errors
-- Usually means hierarchy was updated but notes weren't
-- Create a checklist of affected notes using the export feature
-- Use find-and-replace carefully to update in bulk
+Example: From old hierarchy to new hierarchy (e.g. from `"[[🏢 Companies]]"` do a bulk update to: `"[[🏛️ Institutions]]"`):
+1. Use query tool ([[README-tools]]) to find: `Category equals "[[🏢 Companies]]"`
+2. Bulk update to: `"[[🏛️ Institutions]]"`
+3. Run validator to confirm
+4. Update any saved queries
 
-### DataviewJS errors
-- Each code block needs all required helper functions
-- Copy functions from dataview-helpers.md
-- Ensure hierarchy definition is included where needed
 
-## Maintenance Schedule
+# File Inventory
 
-### Daily
-- Check Recent Activity in dashboard for new uncategorized notes
+## 1. **[[README-hierarchy]].md** (`🔲 Framework/💜 Obsidian Tools/README-hierarchy.md`)
+**Purpose**: Complete documentation for the hierarchy system. This file you're reading now serves as the operations manual for the entire system.
 
-### Weekly
-- Run hierarchy-validator.md
-- Fix any validation issues
-- Review Missing Subcategories section
+**What it contains**:
+- System overview and architecture
+- Complete file inventory and descriptions
+- Current hierarchy structure
+- Update instructions (manual and automated)
+- Troubleshooting guide
+- Maintenance schedule
 
-### Monthly
-- Review unused subcategories
-- Consider hierarchy adjustments
-- Update team assignments as needed
+**How to use it**:
+- Reference for understanding the system
+- Copy prompt templates for automated updates
+- Follow maintenance schedules
+- Use troubleshooting section when issues arise
 
-### Quarterly
-- Full hierarchy review
-- Consider restructuring if needed
-- Archive obsolete categories
+## 4. **hierarchy-dashboard.md** (`🔲 Framework/💜 Obsidian Tools/hierarchy-dashboard.md`)
+**Purpose**: Main dashboard for viewing and analyzing your categorized notes. Comprehensive validation tool to ensure all notes comply with the hierarchy.
 
-## Version History
+**What it shows**:
+- **Quick Stats**: Total notes, percentages with subcategories/teams
+	- Total categorized notes
+	- Total uncategorized notes
+	- Percentage with subcategories
+	- Distribution by category
+	- Distribution by folder
+- **Recent Activity**: Latest modified notes
+	- Last modified notes
+	- Shows all hierarchy properties
+- **Browse by Category**: Detailed breakdown by category and subcategory
+	- Expandable category sections
+	- Subcategory counts
+	- Uncategorized notes finder
+- **Validation Summary**: Overview of all issues found
+- **Category Health Check**: Identifies formatting issues
+- **Subcategory Usage Report**: Which subcategories are unused
+	- Missing Subcategories: Notes that need subcategories added
+	- Unused Subcategories
+	- Usage statistics
+- **Team Assignment Validation**: Invalid team assignments
+	- Invalid Team assignments: references to non-existent teams
+	- Teams Overview: For valid teams only, shows member counts
+	- Member counts by type
+	- Team assignments summary
+	- Missing team warnings
+- **Missing Pages**: Category/subcategory pages that need creation
 
-- **v2.1** (06/18/2025): Added [[🚴‍♀️ Santa Maura]] subcategory under Teams
-- **v2.0** (06/18/2025): Complete system overhaul with standardized functions and enhanced validation
-  - Added dataview-helpers.md for consistent functions
-  - Enhanced dashboard with health checks
-  - Improved validator with export functionality
-  - Added [[💜 Obsidian Tools]] subcategory
-- **v1.0** (Initial): Basic hierarchy system with categories and subcategories
+**How to read it**:
+- Check Quick Stats for overall vault health
+- Use Browse by Category to navigate your hierarchy
+- Teams Overview shows team composition at a glance
+- Category Health Check identifies notes needing updates
+- Start with Validation Summary for issue counts
+- Review detailed issues grouped by type
+- Use the export list to create tasks for fixing issues
+- Check Missing Pages to identify pages to create
 
-## File Version Tracking
+# Version Control
 
-When updating the hierarchy system, these files should be kept in sync:
-
-| File | Current Version | Last Modified | Location |
-|------|----------------|---------------|----------|
-| README-hierarchy.md | 2.1 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
-| hierarchy.md | 1.1 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
-| dataview-helpers.md | 1.1 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
-| category-dashboard.md | 1.0 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
-| hierarchy-validator.md | 1.1 | 06/18/2025 | 🔲 Framework/💜 Obsidian Tools/ |
-
-**Version Update Rules:**
+## Version Update Rules
 - Minor changes (fix typos, adjust formatting): Keep same version
 - Add/remove single subcategory: Increment by 0.1
 - Add/remove category or major restructure: Increment by 1.0
 - Always update Date modified to current date
+## Version History
+
+### Version 2.2 (Current)
+- Date: 06/24/2025
+- Added ability to check for notes with not frontmatter YAML at all
+### Version 2.0
+- Date: 06/24/2025
+- Consolidated into a single hierarchy-dashboard.md file
+- Simplified all common components for re-use and scalability/efficiency
+
+### Version 1.5
+- Date: 06/19/2025
+- Added [[👩‍🎓 Applicant Tracker]] subcategory to People
+- Updated all hierarchy definitions
+- Synchronized helper functions
+### Version 1.4
+- 06/18/2025:
+- Added [[🚴‍♀️ Santa Maura]] subcategory under Teams
+- Updated all hierarchy definitions
+- Synchronized helper functions
+### Version 1.3
+- 06/18/2025
+- Added Teams functionality
+- Improved validation logic
+- Enhanced helper functions
+### Version 1.2
+- 06/18/2025
+- Added Old Brompton Road team
+- Fixed validation bugs
+- Improved dashboard layout
+### Version 1.1
+- Date: 06/18/2025)
+- Complete system overhaul with standardized functions and enhanced validation
+- Added dataview-helpers.md for consistent functions
+- Enhanced dashboard with health checks
+- Improved validator with export functionality
+- Added [[💜 Obsidian Tools]] subcategory
+### Version 1.0
+- Basic hierarchy system with categories and subcategories
+- Basic dashboard and validator
+- Core helper functions
+
+# Maintenance Schedule
+
+## Daily
+- Check Recent Activity in dashboard for new uncategorized notes
+
+## Weekly
+- Run hierarchy-validator.md
+- Fix any validation issues
+- Review Missing Subcategories section
+
+## Monthly
+- Review unused subcategories
+- Consider hierarchy adjustments
+- Update team assignments as needed
+
+## Quarterly
+- Full hierarchy review
+- Consider restructuring if needed
+- Archive obsolete categories
+
+# Future Enhancements
+
+## Planned Features
+- Auto-fix common issues
+- Hierarchy visualization graph
+- Custom hierarchy extensions
+- Batch operations UI
+- Historical tracking
+
+## Under Consideration
+- Multi-level subcategories
+- Dynamic hierarchy loading
+- Cross-vault synchronization
+- API for external tools
+- Automated backups
 
 ---
-
-For questions or issues, refer to the helper functions in dataview-helpers.md or create a new discussion note tagged with #hierarchy-help.
+**System Version**: 1.3  
+**Last Updated**: 2025-06-19  
+**Maintainer**: Your Obsidian Vault  
+**Support**: See obsidian-tools documentation

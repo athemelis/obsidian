@@ -2,14 +2,102 @@
   {
     "expression": [
       {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "[[\ud83d\udc65 People]]"
+      },
+      {
+        "type": "operator",
+        "value": "AND"
+      },
+      {
+        "operator": "equals",
+        "property": "Employer",
+        "type": "condition",
+        "value": "Microsoft"
+      },
+      {
+        "type": "operator",
+        "value": "AND"
+      },
+      {
+        "type": "condition",
+        "property": "Subcategory",
+        "operator": "notExists",
+        "value": ""
+      }
+    ],
+    "displayText": "Category equals \"[[\ud83d\udc65 People]]\" AND Employer equals \"Microsoft\" AND Subcategory does not exist",
+    "createdAt": "2025-06-20T17:53:31.534Z"
+  },
+  {
+    "createdAt": "2025-06-20T17:50:04.682Z",
+    "displayText": "Category equals \"[[\ud83d\udc65 People]]\" AND Employer equals \"Microsoft\"",
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "[[\ud83d\udc65 People]]"
+      },
+      {
+        "type": "operator",
+        "value": "AND"
+      },
+      {
+        "operator": "equals",
+        "property": "Employer",
+        "type": "condition",
+        "value": "Microsoft"
+      }
+    ]
+  },
+  {
+    "expression": [
+      {
         "type": "condition",
         "property": "Category",
         "operator": "equals",
-        "value": "[[\ud83d\udeb5 Sanity]]"
+        "value": "[[\ud83c\udfdb\ufe0f Institutions]]"
+      },
+      {
+        "type": "operator",
+        "value": "AND"
+      },
+      {
+        "type": "condition",
+        "property": "Subcategory",
+        "operator": "notExists",
+        "value": ""
       }
     ],
+    "displayText": "Category equals \"[[\ud83c\udfdb\ufe0f Institutions]]\" AND Subcategory does not exist",
+    "createdAt": "2025-06-20T17:48:08.264Z"
+  },
+  {
+    "createdAt": "2025-06-19T22:25:52.391Z",
+    "displayText": "Category equals \"[[\ud83d\udea5 Horizontals]]\"",
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "[[\ud83d\udea5 Horizontals]]"
+      }
+    ]
+  },
+  {
+    "createdAt": "2025-06-16T01:18:20.982Z",
     "displayText": "Category equals \"[[\ud83d\udeb5 Sanity]]\"",
-    "createdAt": "2025-06-16T01:18:20.982Z"
+    "expression": [
+      {
+        "operator": "equals",
+        "property": "Category",
+        "type": "condition",
+        "value": "[[\ud83d\udeb5 Sanity]]"
+      }
+    ]
   },
   {
     "createdAt": "2025-06-15T18:10:19.186Z",
