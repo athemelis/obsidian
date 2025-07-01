@@ -15567,5 +15567,4847 @@
       "target_file": "",
       "has_query": true
     }
+  },
+  {
+    "timestamp": "2025-06-24T13:42:40.960746",
+    "action": "query",
+    "details": {
+      "expression": [],
+      "results_count": 858,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": false
+    }
+  },
+  {
+    "timestamp": "2025-06-24T13:44:52.211156",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udc65 People]]",
+      "files_count": 1,
+      "modified_count": 1,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Constance Gervais.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_134431"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T13:46:14.016110",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83d\udcaa Work]]"
+      ],
+      "files_count": 1,
+      "modified_count": 1,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Constance Gervais.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_134556"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T13:51:09.100178",
+    "action": "query",
+    "details": {
+      "expression": [],
+      "results_count": 858,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": false
+    }
+  },
+  {
+    "timestamp": "2025-06-24T13:51:27.560204",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "notExists",
+          "value": ""
+        }
+      ],
+      "results_count": 0,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-24T18:47:55.010291",
+    "action": "query",
+    "details": {
+      "expression": [],
+      "results_count": 858,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": false
+    }
+  },
+  {
+    "timestamp": "2025-06-24T18:48:19.780502",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "notExists",
+          "value": ""
+        }
+      ],
+      "results_count": 186,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-24T18:59:22.149929",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udc65 People]]",
+      "files_count": 180,
+      "modified_count": 180,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ruchi Chopra.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Clifford Corney.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Michael Stokes.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mike Bowman.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jesse Kopavi.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Gyanendra Pandey.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rayna Clifton.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Frederico De Marchi.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mavi Etzyon-Grizer.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dhanas Raju.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Laura Perez.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Srilekha Varanasi.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Zach Runner.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jatin Luthra.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Robert Novitskey.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/JP Westwood.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Frank Brown.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Thomas Brackin.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Susan Lamb.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Theo van Leeuwen.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rajesh Jha.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Subodh Kumar.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Elsie Nallipogu.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Laura Barrowman.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Fatima Azzahra El Azzouzi.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Lacy Bliss.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kiran Doreswamy.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kelly Clark.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shyam Narayan.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dan Zarzar.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Vivienne Leong.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sandhya Vankamamidi.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Madhankumar Pandiyan.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Marcus Mourao.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shawn Wang.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sivakanth Mundru.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shiva Shankar Thangadurai.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Steve Dispensa.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rick Turner.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Laurie Litwack.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Min Zhou.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Raman Kalyan.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Philipp Meier.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nick Judd.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Patty Antonopoulou.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jerry Xu.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Eric Kang.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Michael Wilde.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mod Tejavanija.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dongli Pan.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Hannah Rames.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Leopold Durrant.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shilpa Bothra.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Paul Lorimer.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Pat Halvorsen.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shilpi Aggarwal.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nick Poole.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Joel Peterson.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Neel Mahapatro.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shekhar Palta.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ilya Pozarski.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shiv Pratap Singh.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rob Saka.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jovin Raj.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mariana Prudencio.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Marc Sanchez.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Valerie Bennett.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Cliff Embry.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Stacey Law.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shravan Kumar Herikudru Shetty.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Josine Bustalino.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Isie Masri.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Giridhar Balachandran.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rishi Oberoi.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Karen Frederick.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Namrata Gupta.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Philip Liu.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Prabu Raju.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tho Nguyen.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kathleen Hogan.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Simon May.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kurt Mueffelmann.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Wayne Xu.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dylan Ashe.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ziad Khalidi.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Natalie Noonan.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tomer Teller.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shawndell Elfring.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Olson Langness.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Parul Manek.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sierra Olson.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Xiting Phillips.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ravindra Singh Bisht.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Randy Rempel.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Wade Barisoff.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Connor Ingleson.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Radu Vaduva.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Hugh Su.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Pascale Schwerzmann-Saluz.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ryan Yandle.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Erica Toelle.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kay Tzeo-Nguyen.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Iram Arras.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mikael Sitruk.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jinhao Li.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rotshak Dakup.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Damin Barnier.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Niraj Parthasarathy.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Varun Bhatia.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Paul Rich.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mitchelle Gonsalves.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Gautam Prasad.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Erica Stowell.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jiyoung Park.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jeff Overall.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Vikram Nagaraj.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Joy Chik.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nicholas Schutz.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Vasu Jakkal.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Marina Castanedo-Leonard.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Stanislav Zubkov.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dave Hausman.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ely Abramovitch.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Oliver Samuel.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jo Kothari.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Talhah Mir.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Katherine Hallen.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jim Sfekas.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tiffany Gilbert.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Navjot Kirk.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tom Doherty.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Priyanka Pathak.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Xin Xu.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Walid Elmorsy.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dipinka Shrestha.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Josh Santos.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tushark Bansal.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Holger Huegel.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Humair Mandavia.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mugdha Kulkarni.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sesha Mani.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Cory Kincaid.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Deepak Manohar.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sonia Sharma.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/TJ Devine.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rick Bryant.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Stephen Jones.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mark DesCamp.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Thijs van Wetten.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jim Naroski.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Faith Allington (SHE HER).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kushal Ghosh.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sumit Aggarwal.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Gaurav Sareen.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shanmuga Sundaram Mahendran.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Yanan Emma Wang.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sunny Saini.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Priya Chebiyam.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shimi Ezra.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/David Parlin.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Surya Kiran Sharma.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Osama Shabaneh.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Julie Mccoy.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Yabin Liu.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nikhil B.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Hammad Rajjoub.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Leigh Rowland.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Scott Fetty.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kusmanjali Jenamoni.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jason Bero.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kathleen Griffin.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kashif Mohd.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jay Singh Kushwaha.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Deepika Gakhar.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Corey Markell.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Irena Mroz.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tulika Gupta.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Daniel Beade.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nitin Sharma.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mounish Kothapally.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_185902"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:00:42.046179",
+    "action": "modify",
+    "details": {
+      "property": "Subategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83d\udcaa Work]]"
+      ],
+      "files_count": 180,
+      "modified_count": 180,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ruchi Chopra.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Clifford Corney.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Michael Stokes.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mike Bowman.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jesse Kopavi.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Gyanendra Pandey.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rayna Clifton.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Frederico De Marchi.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mavi Etzyon-Grizer.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dhanas Raju.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Laura Perez.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Srilekha Varanasi.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Zach Runner.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jatin Luthra.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Robert Novitskey.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/JP Westwood.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Frank Brown.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Thomas Brackin.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Susan Lamb.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Theo van Leeuwen.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rajesh Jha.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Subodh Kumar.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Elsie Nallipogu.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Laura Barrowman.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Fatima Azzahra El Azzouzi.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Lacy Bliss.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kiran Doreswamy.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kelly Clark.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shyam Narayan.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dan Zarzar.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Vivienne Leong.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sandhya Vankamamidi.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Madhankumar Pandiyan.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Marcus Mourao.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shawn Wang.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sivakanth Mundru.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shiva Shankar Thangadurai.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Steve Dispensa.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rick Turner.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Laurie Litwack.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Min Zhou.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Raman Kalyan.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Philipp Meier.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nick Judd.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Patty Antonopoulou.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jerry Xu.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Eric Kang.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Michael Wilde.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mod Tejavanija.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dongli Pan.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Hannah Rames.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Leopold Durrant.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shilpa Bothra.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Paul Lorimer.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Pat Halvorsen.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shilpi Aggarwal.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nick Poole.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Joel Peterson.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Neel Mahapatro.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shekhar Palta.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ilya Pozarski.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shiv Pratap Singh.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rob Saka.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jovin Raj.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mariana Prudencio.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Marc Sanchez.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Valerie Bennett.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Cliff Embry.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Stacey Law.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shravan Kumar Herikudru Shetty.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Josine Bustalino.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Isie Masri.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Giridhar Balachandran.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rishi Oberoi.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Karen Frederick.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Namrata Gupta.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Philip Liu.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Prabu Raju.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tho Nguyen.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kathleen Hogan.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Simon May.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kurt Mueffelmann.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Wayne Xu.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dylan Ashe.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ziad Khalidi.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Natalie Noonan.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tomer Teller.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shawndell Elfring.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Olson Langness.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Parul Manek.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sierra Olson.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Xiting Phillips.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ravindra Singh Bisht.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Randy Rempel.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Wade Barisoff.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Connor Ingleson.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Radu Vaduva.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Hugh Su.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Pascale Schwerzmann-Saluz.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ryan Yandle.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Erica Toelle.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kay Tzeo-Nguyen.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Iram Arras.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mikael Sitruk.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jinhao Li.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rotshak Dakup.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Damin Barnier.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Niraj Parthasarathy.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Varun Bhatia.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Paul Rich.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mitchelle Gonsalves.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Gautam Prasad.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Erica Stowell.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jiyoung Park.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jeff Overall.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Vikram Nagaraj.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Joy Chik.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nicholas Schutz.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Vasu Jakkal.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Marina Castanedo-Leonard.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Stanislav Zubkov.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dave Hausman.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Ely Abramovitch.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Oliver Samuel.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jo Kothari.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Talhah Mir.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Katherine Hallen.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jim Sfekas.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tiffany Gilbert.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Navjot Kirk.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tom Doherty.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Priyanka Pathak.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Xin Xu.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Walid Elmorsy.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Dipinka Shrestha.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Josh Santos.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tushark Bansal.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Holger Huegel.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Humair Mandavia.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mugdha Kulkarni.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sesha Mani.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Cory Kincaid.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Deepak Manohar.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sonia Sharma.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/TJ Devine.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rick Bryant.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Stephen Jones.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mark DesCamp.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Thijs van Wetten.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jim Naroski.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Faith Allington (SHE HER).md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kushal Ghosh.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sumit Aggarwal.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Gaurav Sareen.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shanmuga Sundaram Mahendran.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Yanan Emma Wang.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Sunny Saini.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Priya Chebiyam.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Shimi Ezra.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/David Parlin.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Surya Kiran Sharma.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Osama Shabaneh.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Julie Mccoy.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Yabin Liu.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nikhil B.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Hammad Rajjoub.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Leigh Rowland.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Scott Fetty.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kusmanjali Jenamoni.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jason Bero.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kathleen Griffin.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Kashif Mohd.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Jay Singh Kushwaha.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Deepika Gakhar.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Corey Markell.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Irena Mroz.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Tulika Gupta.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Daniel Beade.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Nitin Sharma.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Mounish Kothapally.md",
+          "property": "Subategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcaa Work]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_190024"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:02:51.309821",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "notExists",
+          "value": ""
+        }
+      ],
+      "results_count": 6,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:04:07.034676",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udc65 People]]",
+      "files_count": 4,
+      "modified_count": 4,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Susan Lucille Williams-Judge.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Grant Lohse.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Clayton B Brandes.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rachel Sannicandro.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_190348"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:12:26.653672",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83e\ude7a Doctors]]"
+      ],
+      "files_count": 4,
+      "modified_count": 4,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Susan Lucille Williams-Judge.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83e\ude7a Doctors]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Grant Lohse.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83e\ude7a Doctors]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Clayton B Brandes.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83e\ude7a Doctors]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Rachel Sannicandro.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83e\ude7a Doctors]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_191208"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:13:24.140536",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "notExists",
+          "value": ""
+        }
+      ],
+      "results_count": 3,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:14:38.892669",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udc65 People]]",
+      "files_count": 1,
+      "modified_count": 1,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/\ud83e\ude7a Doctors.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_191420"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:15:35.049883",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83e\ude7a Doctors]]"
+      ],
+      "files_count": 1,
+      "modified_count": 1,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/\ud83e\ude7a Doctors.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83e\ude7a Doctors]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_191517"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:15:57.847391",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "notExists",
+          "value": ""
+        }
+      ],
+      "results_count": 2,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:16:54.640183",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udc65 People]]",
+      "files_count": 2,
+      "modified_count": 2,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Lena Kohler.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Lea Themeli.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udc65 People]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_191637"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:17:58.136236",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83e\uddd1\u200d\ud83e\uddd1\u200d\ud83e\uddd2\u200d\ud83e\uddd2 Family]]"
+      ],
+      "files_count": 2,
+      "modified_count": 2,
+      "modifications": [
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Lena Kohler.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83e\uddd1\u200d\ud83e\uddd1\u200d\ud83e\uddd2\u200d\ud83e\uddd2 Family]]"
+          ]
+        },
+        {
+          "file": "\ud83e\udd8b Categories/\ud83d\udc65 People/Lea Themeli.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83e\uddd1\u200d\ud83e\uddd1\u200d\ud83e\uddd2\u200d\ud83e\uddd2 Family]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250624_191740"
+    }
+  },
+  {
+    "timestamp": "2025-06-24T19:18:12.091176",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Category",
+          "operator": "notExists",
+          "value": ""
+        }
+      ],
+      "results_count": 0,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/\ud83e\udd8b Categories/\ud83d\udc65 People",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:42:09.889252",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Obsidian",
+          "operator": "equals",
+          "value": "[[\ud83c\udf34 Topics]]"
+        }
+      ],
+      "results_count": 67,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:42:46.086470",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Obsidian",
+          "operator": "equals",
+          "value": "[[\ud83c\udf34 Topics]]"
+        },
+        {
+          "type": "operator",
+          "value": "AND"
+        },
+        {
+          "type": "condition",
+          "property": "Topic",
+          "operator": "equals",
+          "value": "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+        }
+      ],
+      "results_count": 42,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:44:35.071770",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udeb5 Sanity]]",
+      "files_count": 42,
+      "modified_count": 42,
+      "modifications": [
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Culture Conversations.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb LeAD Session 42 - Mental Fitness \u2013 How to build it for your career growth and personal health!.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/E+D Privacy Fundamentals.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Privacy 101 FY24.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb E+D Privacy Fundamentals Refresh OLT.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb 2024 Security Foundations Protect your identity.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb AI in Security 101 Prompting patterns applied.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Blockchain.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Coaching Habit.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb LinkedIn Branding Guidance.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Identifying Impact.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2023 Security Foundations - Module 3 Protect your data.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Performance Management Overview for Microsoft Security US People Managers - Option 2.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/TRUSTCODE.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Intern Connects Training.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Trust Code SBC FY24.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Intern Program 101.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Rewards Discussions.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/DSP Connect Session.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/MEC.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Delivering FY24 Rewards Outcomes (DRO) - Manager Practice Session (Virtual).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/New Employee Device Onboarding.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb PMCon 2022.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Security Foundations - 2022.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb CES Manager Community Call.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb FY25 Performance, Connects and Rewards.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Connects & Feedback Manager Learning Session.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Microsoft Layoffs to Opportunity.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Trust Code - SBC (Standards of Business Conduct) FY25.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2023 Security Foundations - Module 1 Protect your identity.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Cross-Prompt Injection Attack (XPIA) Deep Dive.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2022-06-27 From Microaggressions to Hate Violence Racism towards LGBTQIA+ Communities.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Privacy 101 FY23.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2022-04-09 Job Architecture For Managers.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/OneRAI.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Security Foundations - Prioritizing Security Above All Else.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Onboarding.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2022-04-14 Developing Others Using SLII.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb 2024 Security Foundations Protect your data.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Inclusive Hiring for Managers.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb 2023 Security Foundations - Module 2 Protect your devices and code.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83c\udf7d\ufe0f Templates/\ud83d\udc69\u200d\ud83c\udfeb Training Template.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250625_074414"
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:45:27.211840",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+      ],
+      "files_count": 42,
+      "modified_count": 42,
+      "modifications": [
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Culture Conversations.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb LeAD Session 42 - Mental Fitness \u2013 How to build it for your career growth and personal health!.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/E+D Privacy Fundamentals.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Privacy 101 FY24.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb E+D Privacy Fundamentals Refresh OLT.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb 2024 Security Foundations Protect your identity.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb AI in Security 101 Prompting patterns applied.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Blockchain.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Coaching Habit.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb LinkedIn Branding Guidance.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Identifying Impact.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2023 Security Foundations - Module 3 Protect your data.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Performance Management Overview for Microsoft Security US People Managers - Option 2.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/TRUSTCODE.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Intern Connects Training.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Trust Code SBC FY24.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Intern Program 101.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Rewards Discussions.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/DSP Connect Session.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/MEC.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Delivering FY24 Rewards Outcomes (DRO) - Manager Practice Session (Virtual).md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/New Employee Device Onboarding.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb PMCon 2022.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Security Foundations - 2022.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb CES Manager Community Call.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb FY25 Performance, Connects and Rewards.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Connects & Feedback Manager Learning Session.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Microsoft Layoffs to Opportunity.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Trust Code - SBC (Standards of Business Conduct) FY25.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2023 Security Foundations - Module 1 Protect your identity.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Cross-Prompt Injection Attack (XPIA) Deep Dive.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2022-06-27 From Microaggressions to Hate Violence Racism towards LGBTQIA+ Communities.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Privacy 101 FY23.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2022-04-09 Job Architecture For Managers.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/OneRAI.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb Security Foundations - Prioritizing Security Above All Else.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Onboarding.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/2022-04-14 Developing Others Using SLII.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb 2024 Security Foundations Protect your data.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/Inclusive Hiring for Managers.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83c\udf34 Topics/\ud83d\udc69\u200d\ud83c\udfeb Training/\ud83d\udc69\u200d\ud83c\udfeb 2023 Security Foundations - Module 2 Protect your devices and code.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83c\udf7d\ufe0f Templates/\ud83d\udc69\u200d\ud83c\udfeb Training Template.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udc69\u200d\ud83c\udfeb Training]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250625_074509"
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:47:54.583400",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Obsidian",
+          "operator": "equals",
+          "value": "[[\ud83d\udd32 Frameworks]]"
+        }
+      ],
+      "results_count": 40,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:49:48.026119",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Obsidian",
+          "operator": "equals",
+          "value": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "type": "operator",
+          "value": "AND"
+        },
+        {
+          "type": "condition",
+          "property": "Framework",
+          "operator": "equals",
+          "value": "[[\ud83d\udcdd Transcripts]]"
+        }
+      ],
+      "results_count": 40,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:50:50.442099",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udd32 Frameworks]]",
+      "files_count": 40,
+      "modified_count": 40,
+      "modifications": [
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83c\udf7d\ufe0f Templates/\ud83d\udcdd Transcript Template.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-06 Tony and Nick Chat.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-17 Tony Themelis & Nathan Value Review Discussion.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-16 Tony Themelis and Tyler Sparks.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Open Forum - Networking and The Power of LinkedIn - NAM - EN (chat).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-01 chat at the Hotel Reykjavik Centrum, testing granola.ai.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-09 Re Intros.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-13 RE Resume Tony Themelis.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 Tony Themelis & Nathan Brown Financial Plan Discussion.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-23 Protiviti Interview with Nicolle Brady.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Develop Your Brand - Global.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-21 2nd call with Bhavy.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-24 Kyle Tony.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-18 ENG Connect Discussion Experienced Hire Tony Themelis.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Open Forum - Networking and The Power of LinkedIn - NAM - EN (Questions).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-17 Catch-up and team updates.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-05-29 Microsoft Layoffs to Opportunity.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-12 Protiviti Interview via Video Call Confirmation \u2013 Please Confirm (Tony Themilis).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-06 Protiviti Interview via Video Call Confirmation \u2013 Please Confirm (Tony Themilis).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-05-05 Tony Themelis - Clean and Commented Drafts and Meeting Invitation.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 Microsoft Purview Endpoint DLP new capabilities webinar.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-18 Chat with Nick.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Open Forum - Networking and The Power of LinkedIn - NAM - EN.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-24 \ud83d\udc65 Lynnette Palmer 18.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 David Tony chat.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-21 Career transition check-in with Bhavy after Microsoft layoff.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-19 Tony Mark Catch-Up.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd OpenText Opportunity.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-20 Tony and Kyle.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-16 Call with Monica Sabo.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-02 Tony Themelis, See you soon\u2014your Initial Meeting with Nathan is confirmed.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-06 \ud83d\udc65 Lynnette Palmer 17.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Develop Your Brand - Global (chat).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-24 Video Interview - Tony Themilis S&P Microsoft Purview AD Seattle.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-13 Protiviti Interview via Video Call Confirmation \u2013 Please Confirm (Tony Themilis).md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-11 PM & Eng Sync up.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-17 Tony Themelis call with Atle and Vivek.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-16 Tony-John.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 Ad-hoc with John Loya.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udd32 Frameworks]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250625_075032"
+    }
+  },
+  {
+    "timestamp": "2025-06-25T07:51:44.030924",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\ud83d\udcdd Transcripts]]"
+      ],
+      "files_count": 40,
+      "modified_count": 40,
+      "modifications": [
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83c\udf7d\ufe0f Templates/\ud83d\udcdd Transcript Template.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-06 Tony and Nick Chat.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-17 Tony Themelis & Nathan Value Review Discussion.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-16 Tony Themelis and Tyler Sparks.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Open Forum - Networking and The Power of LinkedIn - NAM - EN (chat).md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-01 chat at the Hotel Reykjavik Centrum, testing granola.ai.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-09 Re Intros.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-13 RE Resume Tony Themelis.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 Tony Themelis & Nathan Brown Financial Plan Discussion.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-23 Protiviti Interview with Nicolle Brady.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Develop Your Brand - Global.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-21 2nd call with Bhavy.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-24 Kyle Tony.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-18 ENG Connect Discussion Experienced Hire Tony Themelis.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Open Forum - Networking and The Power of LinkedIn - NAM - EN (Questions).md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-17 Catch-up and team updates.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-05-29 Microsoft Layoffs to Opportunity.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-12 Protiviti Interview via Video Call Confirmation \u2013 Please Confirm (Tony Themilis).md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-06 Protiviti Interview via Video Call Confirmation \u2013 Please Confirm (Tony Themilis).md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-05-05 Tony Themelis - Clean and Commented Drafts and Meeting Invitation.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 Microsoft Purview Endpoint DLP new capabilities webinar.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-18 Chat with Nick.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Open Forum - Networking and The Power of LinkedIn - NAM - EN.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-24 \ud83d\udc65 Lynnette Palmer 18.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 David Tony chat.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-21 Career transition check-in with Bhavy after Microsoft layoff.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-19 Tony Mark Catch-Up.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd OpenText Opportunity.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-20 Tony and Kyle.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-16 Call with Monica Sabo.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-02 Tony Themelis, See you soon\u2014your Initial Meeting with Nathan is confirmed.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-06 \ud83d\udc65 Lynnette Palmer 17.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-05 LHH CRN Session Confirmation - Develop Your Brand - Global (chat).md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-24 Video Interview - Tony Themilis S&P Microsoft Purview AD Seattle.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-13 Protiviti Interview via Video Call Confirmation \u2013 Please Confirm (Tony Themilis).md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-11 PM & Eng Sync up.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-17 Tony Themelis call with Atle and Vivek.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-16 Tony-John.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83d\udcdd Transcripts/\ud83d\udcdd 2025-06-10 Ad-hoc with John Loya.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\ud83d\udcdd Transcripts]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250625_075126"
+    }
+  },
+  {
+    "timestamp": "2025-06-25T08:06:45.963120",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Obsidian",
+          "operator": "equals",
+          "value": "[[\ud83d\udcca Accountabilities]]"
+        }
+      ],
+      "results_count": 0,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-25T08:08:00.811971",
+    "action": "query",
+    "details": {
+      "expression": [
+        {
+          "type": "condition",
+          "property": "Accountability",
+          "operator": "equals",
+          "value": "Travel Plans"
+        }
+      ],
+      "results_count": 32,
+      "include_properties": [
+        "Obsidian",
+        "Category",
+        "Subcategory",
+        "Team",
+        "Stakeholder"
+      ],
+      "search_path": "/Users/tonythem/Obsidian/tonythem/",
+      "target_file": "",
+      "has_query": true
+    }
+  },
+  {
+    "timestamp": "2025-06-25T08:09:30.961362",
+    "action": "modify",
+    "details": {
+      "property": "Category",
+      "original_value": "",
+      "new_value": "[[\ud83d\udeb5 Sanity]]",
+      "files_count": 32,
+      "modified_count": 32,
+      "modifications": [
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-07-14 Tino Europe.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-09-11 Lea Amsterdam.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-04-28 SFO RSA.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-07-01 SEA - Basti.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-03-24 Macalester.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-08-23 Lin RSA.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-05-18 Leanne Whitefish.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-07-09 Triple Bypass.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-05-11 San Francisco - Pasports.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-07-20 London-Athens.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-09-22 Stockholm FabCon.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-06-28 St. Andrews Tino.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-07-15 Lea.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-03-30 Vegas.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-06-27 Tino Boston.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-02-17 Lewis & Clark.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-06-27 Victoria.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-10-30 Nashville.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-01-30 Pacific Coast.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-08-31 Tony Boston.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-04-17 Boston.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-03-17 NYC - Basti.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-03-31 Lin RSA.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-08-26 Tino Boston.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-07-18 SFO Passport collection.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-05-08 Ilias.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-11-26 Tino Boston.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-05-16 Tino Iceland.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-05-31 Lin Monterrey.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-04-23 RSA.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83c\udf7d\ufe0f Templates/\u2708\ufe0f Travel Plans Template.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        },
+        {
+          "file": "\u26d4 Personal Home/\u2708\ufe0f Travel Plans.md",
+          "property": "Category",
+          "before": null,
+          "after": "[[\ud83d\udeb5 Sanity]]"
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250625_080909"
+    }
+  },
+  {
+    "timestamp": "2025-06-25T08:10:24.382305",
+    "action": "modify",
+    "details": {
+      "property": "Subcategory",
+      "original_value": "",
+      "new_value": [
+        "[[\u2708\ufe0f Travel Plans]]"
+      ],
+      "files_count": 32,
+      "modified_count": 32,
+      "modifications": [
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-07-14 Tino Europe.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-09-11 Lea Amsterdam.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-04-28 SFO RSA.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-07-01 SEA - Basti.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-03-24 Macalester.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-08-23 Lin RSA.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-05-18 Leanne Whitefish.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-07-09 Triple Bypass.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-05-11 San Francisco - Pasports.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-07-20 London-Athens.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-09-22 Stockholm FabCon.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-06-28 St. Andrews Tino.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-07-15 Lea.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-03-30 Vegas.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-06-27 Tino Boston.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-02-17 Lewis & Clark.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-06-27 Victoria.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-10-30 Nashville.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-01-30 Pacific Coast.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-08-31 Tony Boston.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-04-17 Boston.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-03-17 NYC - Basti.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-03-31 Lin RSA.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-08-26 Tino Boston.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2022-07-18 SFO Passport collection.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2024-05-08 Ilias.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-11-26 Tino Boston.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-05-16 Tino Iceland.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2025-05-31 Lin Monterrey.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udcca Accountabilities/\u2708\ufe0f Travel Plans/\u2708\ufe0f 2023-04-23 RSA.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\ud83d\udd32 Framework/\ud83c\udf7d\ufe0f Templates/\u2708\ufe0f Travel Plans Template.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        },
+        {
+          "file": "\u26d4 Personal Home/\u2708\ufe0f Travel Plans.md",
+          "property": "Subcategory",
+          "before": null,
+          "after": [
+            "[[\u2708\ufe0f Travel Plans]]"
+          ]
+        }
+      ],
+      "backup_path": "/Users/tonythem/Obsidian/backups/tonythem_backup_20250625_081004"
+    }
   }
 ]

@@ -417,6 +417,7 @@ def evaluate_condition(frontmatter, condition):
     
     # Handle 'notExists' operator
     if operator == 'notExists':
+        # If no frontmatter at all, property doesn't exist
         if not frontmatter:
             return True
         # Property doesn't exist or is empty/null
@@ -468,6 +469,9 @@ def evaluate_single_value(prop_value, operator, match_value):
 
 def evaluate_expression(frontmatter, expression):
     """Evaluate a boolean expression against frontmatter"""
+    # Special case: if expression contains only 'notExists' conditions and no frontmatter
+    # we need to handle this differently
+    
     # Convert expression to evaluatable format
     eval_parts = []
     i = 0
@@ -512,7 +516,8 @@ def find_matching_files(expression, include_properties=None, search_path=None, t
             frontmatter, _ = read_frontmatter(target_file)
             
             # If no query, include the file. If query exists, evaluate it
-            if not has_query or (frontmatter and evaluate_expression(frontmatter, expression)):
+            # Important: evaluate even if frontmatter is None for 'notExists' operator
+            if not has_query or evaluate_expression(frontmatter, expression):
                 relative_path = os.path.relpath(target_file, VAULT_PATH)
                 file_info = {
                     'name': os.path.basename(target_file),
@@ -550,7 +555,9 @@ def find_matching_files(expression, include_properties=None, search_path=None, t
                 frontmatter, _ = read_frontmatter(file_path)
                 
                 # If no query, include all files. If query exists, evaluate it
-                if not has_query or (frontmatter and evaluate_expression(frontmatter, expression)):
+                # Key change: We now evaluate the expression even when frontmatter is None
+                # This allows 'notExists' conditions to match files without frontmatter
+                if not has_query or evaluate_expression(frontmatter, expression):
                     relative_path = os.path.relpath(file_path, VAULT_PATH)
                     file_info = {
                         'name': file,
