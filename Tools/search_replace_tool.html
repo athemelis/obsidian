@@ -87,16 +87,22 @@
             color: #4b5563;
         }
         
-        input[type="text"] {
+        input[type="text"], textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #d1d5db;
             border-radius: 6px;
             font-size: 16px;
             transition: border-color 0.2s;
+            font-family: inherit;
         }
         
-        input[type="text"]:focus {
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        input[type="text"]:focus, textarea:focus {
             outline: none;
             border-color: #7c3aed;
         }
@@ -209,18 +215,65 @@
             overflow: hidden;
         }
         
+        .file-result.selected {
+            border-color: #7c3aed;
+            background-color: #f3f0ff;
+        }
+        
         .file-header {
             background-color: #f9fafb;
             padding: 12px 20px;
             font-weight: 600;
-            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
         }
         
         .file-header:hover {
             background-color: #f3f4f6;
+        }
+        
+        .file-result.selected .file-header {
+            background-color: #ede9fe;
+        }
+        
+        .file-checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        
+        .file-checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .file-path {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        
+        .file-path:hover {
+            text-decoration: underline;
+        }
+        
+        .selection-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .selection-info {
+            margin-left: auto;
+            color: #6b7280;
+            font-size: 14px;
         }
         
         .match-count {
@@ -235,6 +288,10 @@
             padding: 20px;
             border-top: 1px solid #e5e7eb;
             display: none;
+        }
+        
+        .file-matches.expanded {
+            display: block;
         }
         
         .match-item {
@@ -256,10 +313,14 @@
         .original {
             color: #dc2626;
             margin-bottom: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
         
         .replacement {
             color: #059669;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
         
         .line-number {
@@ -297,6 +358,40 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+        
+        .mode-options {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .mode-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #374151;
+        }
+        
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .delete-mode-active {
+            background-color: #fee2e2;
+            border: 1px solid #ef4444;
+        }
+        
+        .info-box {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 14px;
+            border: 1px solid #3b82f6;
         }
     </style>
 </head>
@@ -345,15 +440,44 @@
                     <div class="help-text">Select a specific file to limit search/replace to that file only</div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="searchPattern">Search Pattern</label>
-                    <input type="text" id="searchPattern" placeholder="Enter search pattern (use * for any characters, ? for single character)" required>
-                    <div class="help-text">Examples: "TODO*", "Meeting ??.md", "[[*]]"</div>
+                <div class="mode-options">
+                    <div class="mode-title">Search Mode Options</div>
+                    <div class="option-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="multilineMode" onchange="window.toggleMultilineMode()"> Enable Multi-line Search
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="deleteMode" onchange="window.toggleDeleteMode()"> Delete Mode (remove matched text)
+                        </label>
+                    </div>
                 </div>
                 
                 <div class="form-group">
+                    <label for="searchPattern">Search Pattern</label>
+                    <div id="searchInputContainer">
+                        <input type="text" id="searchPattern" placeholder="Enter search pattern (use * for any characters, ? for single character)" required>
+                    </div>
+                    <div class="help-text">Examples: "TODO*", "Meeting ??.md", "[[*]]"</div>
+                    <div class="info-box" id="multilineInfo" style="display: none;">
+                        In multi-line mode, wildcards (*) can match across line breaks. Use Shift+Enter or paste multi-line text.
+                    </div>
+                </div>
+                
+                <div class="form-group" id="replaceGroup">
                     <label for="replacePattern">Replace Pattern</label>
-                    <input type="text" id="replacePattern" placeholder="Enter replacement text (leave empty for search only)">
+                    <div id="replaceInputContainer">
+                        <input type="text" id="replacePattern" placeholder="Enter replacement text (leave empty for search only)">
+                    </div>
+                </div>
+                
+                <div class="form-group" id="lineBreakOptions" style="display: none;">
+                    <label>Line Break Handling</label>
+                    <div class="option-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="deleteTrailingLineBreaks" checked> Delete trailing line breaks when removing text
+                        </label>
+                        <div class="help-text">When checked, if deleted text ends with a line break, that line break will also be removed</div>
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -381,7 +505,7 @@
                 <div class="button-group">
                     <button type="button" class="btn-primary" onclick="window.performSearch()">Search</button>
                     <button type="button" class="btn-secondary" onclick="window.performPreview()" id="previewBtn" style="display:none;">Preview Changes</button>
-                    <button type="button" class="btn-danger" onclick="window.performReplace()" id="replaceBtn" style="display:none;">Apply Replace</button>
+                    <button type="button" class="btn-danger" onclick="window.performReplace()" id="replaceBtn" style="display:none;">Apply Changes</button>
                 </div>
             </form>
             
@@ -405,6 +529,65 @@
         let currentResults = null;
         let allFolders = [];
         let allFiles = [];
+        let selectedFiles = new Set();
+        
+        // Toggle multi-line mode
+        window.toggleMultilineMode = function() {
+            const multilineMode = document.getElementById('multilineMode').checked;
+            const searchContainer = document.getElementById('searchInputContainer');
+            const replaceContainer = document.getElementById('replaceInputContainer');
+            const multilineInfo = document.getElementById('multilineInfo');
+            
+            if (multilineMode) {
+                // Replace inputs with textareas
+                const searchValue = document.getElementById('searchPattern').value;
+                searchContainer.innerHTML = '<textarea id="searchPattern" placeholder="Enter search pattern (use * for any characters, ? for single character)" required>' + searchValue + '</textarea>';
+                
+                const replaceValue = document.getElementById('replacePattern')?.value || '';
+                replaceContainer.innerHTML = '<textarea id="replacePattern" placeholder="Enter replacement text (leave empty for search only)">' + replaceValue + '</textarea>';
+                
+                multilineInfo.style.display = 'block';
+            } else {
+                // Replace textareas with inputs
+                const searchValue = document.getElementById('searchPattern').value;
+                searchContainer.innerHTML = '<input type="text" id="searchPattern" placeholder="Enter search pattern (use * for any characters, ? for single character)" required value="' + escapeHtml(searchValue) + '">';
+                
+                const replaceValue = document.getElementById('replacePattern')?.value || '';
+                replaceContainer.innerHTML = '<input type="text" id="replacePattern" placeholder="Enter replacement text (leave empty for search only)" value="' + escapeHtml(replaceValue) + '">';
+                
+                multilineInfo.style.display = 'none';
+            }
+        };
+        
+        // Toggle delete mode
+        window.toggleDeleteMode = function() {
+            const deleteMode = document.getElementById('deleteMode').checked;
+            const replaceGroup = document.getElementById('replaceGroup');
+            const lineBreakOptions = document.getElementById('lineBreakOptions');
+            const modeOptions = document.querySelector('.mode-options');
+            
+            if (deleteMode) {
+                replaceGroup.style.display = 'none';
+                lineBreakOptions.style.display = 'block';
+                modeOptions.classList.add('delete-mode-active');
+                
+                // Update button text
+                const replaceBtn = document.getElementById('replaceBtn');
+                if (replaceBtn) {
+                    replaceBtn.textContent = 'Delete Matches';
+                }
+            } else {
+                replaceGroup.style.display = 'block';
+                lineBreakOptions.style.display = 'none';
+                modeOptions.classList.remove('delete-mode-active');
+                
+                // Reset button text
+                const replaceBtn = document.getElementById('replaceBtn');
+                if (replaceBtn) {
+                    replaceBtn.textContent = 'Apply Replace';
+                }
+            }
+        };
         
         // Make all functions globally available right away
         window.loadFolders = async function() {
@@ -537,39 +720,6 @@
             }
         };
         
-        window.loadFiles = async function() {
-            const folderPath = document.getElementById('targetFolder').value;
-            const fileSelectGroup = document.getElementById('fileSelectGroup');
-            const fileSelect = document.getElementById('targetFile');
-            
-            if (!folderPath) {
-                fileSelectGroup.style.display = 'none';
-                return;
-            }
-            
-            try {
-                const response = await fetch(`${API_BASE}/files`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ folderPath })
-                });
-                
-                if (!response.ok) throw new Error('Failed to load files');
-                
-                const data = await response.json();
-                
-                allFiles = data.files;
-                document.getElementById('fileSearch').value = '';
-                filterFiles();
-                
-                fileSelectGroup.style.display = 'block';
-                
-            } catch (error) {
-                console.error('Error loading files:', error);
-                fileSelectGroup.style.display = 'none';
-            }
-        };
-        
         window.filterFiles = function() {
             const searchTerm = document.getElementById('fileSearch').value.toLowerCase();
             const select = document.getElementById('targetFile');
@@ -611,6 +761,8 @@
             const targetPath = document.getElementById('targetFolder').value;
             const targetFile = document.getElementById('targetFile').value;
             const excludeWikilinks = document.getElementById('excludeWikilinks').checked;
+            const multilineMode = document.getElementById('multilineMode').checked;
+            const deleteMode = document.getElementById('deleteMode').checked;
             
             if (!searchPattern) {
                 alert('Please enter a search pattern');
@@ -624,7 +776,15 @@
                 const response = await fetch(`${API_BASE}/search`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ searchPattern, searchScope, targetPath, vaultPath, targetFile, excludeWikilinks })
+                    body: JSON.stringify({ 
+                        searchPattern, 
+                        searchScope, 
+                        targetPath, 
+                        vaultPath, 
+                        targetFile, 
+                        excludeWikilinks,
+                        multilineMode
+                    })
                 });
                 
                 if (!response.ok) throw new Error('Search failed');
@@ -633,10 +793,16 @@
                 currentResults = data;
                 displaySearchResults(data);
                 
-                const replacePattern = document.getElementById('replacePattern').value;
-                if (replacePattern && data.totalFiles > 0) {
+                // Show action buttons based on mode
+                if (data.totalFiles > 0) {
                     document.getElementById('previewBtn').style.display = 'inline-block';
                     document.getElementById('replaceBtn').style.display = 'inline-block';
+                    
+                    if (deleteMode) {
+                        document.getElementById('replaceBtn').textContent = 'Delete Matches';
+                    } else {
+                        document.getElementById('replaceBtn').textContent = 'Apply Replace';
+                    }
                 }
                 
             } catch (error) {
@@ -647,13 +813,24 @@
         };
         
         window.performPreview = async function() {
+            if (selectedFiles.size === 0) {
+                alert('Please select at least one file to preview changes');
+                return;
+            }
+            
             const searchPattern = document.getElementById('searchPattern').value;
-            const replacePattern = document.getElementById('replacePattern').value;
+            const deleteMode = document.getElementById('deleteMode').checked;
+            const replacePattern = deleteMode ? '' : (document.getElementById('replacePattern')?.value || '');
             const searchScope = document.querySelector('input[name="searchScope"]:checked').value;
             const vaultPath = document.getElementById('vaultPath').value;
             const targetPath = document.getElementById('targetFolder').value;
             const targetFile = document.getElementById('targetFile').value;
             const excludeWikilinks = document.getElementById('excludeWikilinks').checked;
+            const multilineMode = document.getElementById('multilineMode').checked;
+            const deleteTrailingLineBreaks = document.getElementById('deleteTrailingLineBreaks').checked;
+            
+            // Filter results to only selected files
+            const selectedFilePaths = Array.from(selectedFiles);
             
             showLoading(true);
             
@@ -661,7 +838,19 @@
                 const response = await fetch(`${API_BASE}/preview`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ searchPattern, replacePattern, searchScope, targetPath, vaultPath, targetFile, excludeWikilinks })
+                    body: JSON.stringify({ 
+                        searchPattern, 
+                        replacePattern, 
+                        searchScope, 
+                        targetPath, 
+                        vaultPath, 
+                        targetFile, 
+                        excludeWikilinks,
+                        multilineMode,
+                        deleteMode,
+                        deleteTrailingLineBreaks,
+                        selectedFiles: selectedFilePaths
+                    })
                 });
                 
                 if (!response.ok) throw new Error('Preview failed');
@@ -677,8 +866,15 @@
         };
         
         window.performReplace = async function() {
-            const confirmMsg = `Are you sure you want to perform this replace operation?\n\n` +
-                              `This will modify ${currentResults.totalFiles} file(s) with ${currentResults.totalMatches} change(s).\n\n` +
+            if (selectedFiles.size === 0) {
+                alert('Please select at least one file to apply changes');
+                return;
+            }
+            
+            const deleteMode = document.getElementById('deleteMode').checked;
+            const actionVerb = deleteMode ? 'delete' : 'replace';
+            const confirmMsg = `Are you sure you want to ${actionVerb} the matched text?\n\n` +
+                              `This will modify ${selectedFiles.size} selected file(s).\n\n` +
                               `REMINDER: Please ensure you have backed up your vault before proceeding!`;
             
             if (!confirm(confirmMsg)) {
@@ -686,12 +882,17 @@
             }
             
             const searchPattern = document.getElementById('searchPattern').value;
-            const replacePattern = document.getElementById('replacePattern').value;
+            const replacePattern = deleteMode ? '' : (document.getElementById('replacePattern')?.value || '');
             const searchScope = document.querySelector('input[name="searchScope"]:checked').value;
             const vaultPath = document.getElementById('vaultPath').value;
             const targetPath = document.getElementById('targetFolder').value;
             const targetFile = document.getElementById('targetFile').value;
             const excludeWikilinks = document.getElementById('excludeWikilinks').checked;
+            const multilineMode = document.getElementById('multilineMode').checked;
+            const deleteTrailingLineBreaks = document.getElementById('deleteTrailingLineBreaks').checked;
+            
+            // Filter results to only selected files
+            const selectedFilePaths = Array.from(selectedFiles);
             
             showLoading(true);
             
@@ -699,7 +900,19 @@
                 const response = await fetch(`${API_BASE}/replace`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ searchPattern, replacePattern, searchScope, targetPath, vaultPath, targetFile, excludeWikilinks })
+                    body: JSON.stringify({ 
+                        searchPattern, 
+                        replacePattern, 
+                        searchScope, 
+                        targetPath, 
+                        vaultPath, 
+                        targetFile, 
+                        excludeWikilinks,
+                        multilineMode,
+                        deleteMode,
+                        deleteTrailingLineBreaks,
+                        selectedFiles: selectedFilePaths
+                    })
                 });
                 
                 if (!response.ok) throw new Error('Replace failed');
@@ -715,10 +928,12 @@
                 
                 clearResults();
                 document.getElementById('searchPattern').value = '';
-                document.getElementById('replacePattern').value = '';
+                if (!deleteMode) {
+                    document.getElementById('replacePattern').value = '';
+                }
                 
             } catch (error) {
-                alert('Error performing replace: ' + error.message);
+                alert('Error performing ' + actionVerb + ': ' + error.message);
             } finally {
                 showLoading(false);
             }
@@ -729,12 +944,34 @@
             const statsDiv = document.getElementById('stats');
             const contentDiv = document.getElementById('resultsContent');
             
-            statsDiv.textContent = `Found ${data.totalMatches} match(es) in ${data.totalFiles} file(s)`;
+            currentResults = data;
+            selectedFiles.clear();
+            
+            // Update stats with selection controls
+            statsDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 20px; width: 100%;">
+                    <span style="font-size: 18px; font-weight: 600;">Found ${data.totalMatches} match(es) in ${data.totalFiles} file(s)</span>
+                    <div class="selection-controls">
+                        <button type="button" class="btn-secondary" onclick="window.selectAll()" style="padding: 6px 12px; font-size: 14px;">Select All</button>
+                        <button type="button" class="btn-secondary" onclick="window.deselectAll()" style="padding: 6px 12px; font-size: 14px;">Deselect All</button>
+                        <button type="button" class="btn-secondary" onclick="window.expandAll()" style="padding: 6px 12px; font-size: 14px;">Expand All</button>
+                        <button type="button" class="btn-secondary" onclick="window.collapseAll()" style="padding: 6px 12px; font-size: 14px;">Collapse All</button>
+                    </div>
+                    <span class="selection-info" id="selectionInfo">0 files selected</span>
+                </div>
+            `;
             
             contentDiv.innerHTML = data.matches.map((file, index) => `
-                <div class="file-result">
-                    <div class="file-header" onclick="window.toggleFileMatches(${index})">
-                        <span>${file.relativePath}</span>
+                <div class="file-result" id="file-result-${index}">
+                    <div class="file-header">
+                        <div class="file-checkbox-wrapper">
+                            <input type="checkbox" 
+                                   class="file-checkbox" 
+                                   id="file-checkbox-${index}" 
+                                   onchange="window.toggleFileSelection('${file.fullPath}', ${index})"
+                                   onclick="event.stopPropagation()">
+                            <span class="file-path" onclick="window.toggleFileMatches(${index})">${file.relativePath}</span>
+                        </div>
                         <span class="match-count">${file.matches.length}</span>
                     </div>
                     <div class="file-matches" id="matches-${index}">
@@ -756,13 +993,14 @@
             const resultsDiv = document.getElementById('results');
             const statsDiv = document.getElementById('stats');
             const contentDiv = document.getElementById('resultsContent');
+            const deleteMode = document.getElementById('deleteMode').checked;
             
-            statsDiv.textContent = `Preview: ${data.totalChanges} change(s) in ${data.totalFiles} file(s)`;
+            statsDiv.innerHTML = `<span style="font-size: 18px; font-weight: 600;">Preview: ${data.totalChanges} change(s) in ${data.totalFiles} file(s)</span>`;
             
             contentDiv.innerHTML = data.previews.map((file, index) => `
                 <div class="file-result">
-                    <div class="file-header" onclick="window.toggleFileMatches(${index})">
-                        <span>${file.relativePath}</span>
+                    <div class="file-header">
+                        <span class="file-path" onclick="window.toggleFileMatches(${index})">${file.relativePath}</span>
                         <span class="match-count">${file.changes.length}</span>
                     </div>
                     <div class="file-matches" id="matches-${index}">
@@ -770,7 +1008,7 @@
                             <div class="match-item">
                                 <div class="match-type">${change.type === 'filename' ? 'Filename Change' : 'Content Change'}</div>
                                 <div class="original">- ${escapeHtml(change.original)}</div>
-                                <div class="replacement">+ ${escapeHtml(change.replacement)}</div>
+                                ${!deleteMode ? `<div class="replacement">+ ${escapeHtml(change.replacement)}</div>` : '<div class="replacement">[Text will be deleted]</div>'}
                                 ${change.lineNumber ? `<div class="line-number">Line ${change.lineNumber}</div>` : ''}
                             </div>
                         `).join('')}
@@ -781,9 +1019,81 @@
             resultsDiv.style.display = 'block';
         }
         
+        window.toggleFileSelection = function(filePath, index) {
+            const checkbox = document.getElementById(`file-checkbox-${index}`);
+            const fileResult = document.getElementById(`file-result-${index}`);
+            
+            if (checkbox.checked) {
+                selectedFiles.add(filePath);
+                fileResult.classList.add('selected');
+            } else {
+                selectedFiles.delete(filePath);
+                fileResult.classList.remove('selected');
+            }
+            
+            updateSelectionInfo();
+        };
+        
+        window.selectAll = function() {
+            if (currentResults && currentResults.matches) {
+                currentResults.matches.forEach((file, index) => {
+                    selectedFiles.add(file.fullPath);
+                    const checkbox = document.getElementById(`file-checkbox-${index}`);
+                    const fileResult = document.getElementById(`file-result-${index}`);
+                    if (checkbox) checkbox.checked = true;
+                    if (fileResult) fileResult.classList.add('selected');
+                });
+                updateSelectionInfo();
+            }
+        };
+        
+        window.deselectAll = function() {
+            selectedFiles.clear();
+            if (currentResults && currentResults.matches) {
+                currentResults.matches.forEach((file, index) => {
+                    const checkbox = document.getElementById(`file-checkbox-${index}`);
+                    const fileResult = document.getElementById(`file-result-${index}`);
+                    if (checkbox) checkbox.checked = false;
+                    if (fileResult) fileResult.classList.remove('selected');
+                });
+            }
+            updateSelectionInfo();
+        };
+        
+        window.expandAll = function() {
+            if (currentResults && currentResults.matches) {
+                currentResults.matches.forEach((file, index) => {
+                    const matchesDiv = document.getElementById(`matches-${index}`);
+                    if (matchesDiv) {
+                        matchesDiv.classList.add('expanded');
+                    }
+                });
+            }
+        };
+        
+        window.collapseAll = function() {
+            if (currentResults && currentResults.matches) {
+                currentResults.matches.forEach((file, index) => {
+                    const matchesDiv = document.getElementById(`matches-${index}`);
+                    if (matchesDiv) {
+                        matchesDiv.classList.remove('expanded');
+                    }
+                });
+            }
+        };
+        
+        function updateSelectionInfo() {
+            const selectionInfo = document.getElementById('selectionInfo');
+            if (selectionInfo) {
+                selectionInfo.textContent = `${selectedFiles.size} file${selectedFiles.size !== 1 ? 's' : ''} selected`;
+            }
+        }
+        
         window.toggleFileMatches = function(index) {
             const matchesDiv = document.getElementById(`matches-${index}`);
-            matchesDiv.style.display = matchesDiv.style.display === 'none' ? 'block' : 'none';
+            if (matchesDiv) {
+                matchesDiv.classList.toggle('expanded');
+            }
         };
         
         window.clearResults = function() {
@@ -792,6 +1102,7 @@
             document.getElementById('previewBtn').style.display = 'none';
             document.getElementById('replaceBtn').style.display = 'none';
             currentResults = null;
+            selectedFiles.clear();
         };
         
         function showLoading(show) {

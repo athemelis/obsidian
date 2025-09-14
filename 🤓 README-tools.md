@@ -1,3 +1,8 @@
+---
+Category: "[[🔲 Frameworks]]"
+Subcategory:
+  - "[[💜 Obsidian Tools]]"
+---
 # Obsidian Tools Suite
 
 A powerful set of tools for managing and modifying Obsidian vault notes in bulk, with advanced query capabilities and search/replace functionality.
