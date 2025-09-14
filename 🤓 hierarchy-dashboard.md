@@ -3,7 +3,7 @@ Category: "[[🔲 Frameworks]]"
 Subcategory:
   - "[[💜 Obsidian Tools]]"
 Date modified: 06/25/2025
-Version: 2.5
+Version: 3.5
 ---
 
 ```dataviewjs
@@ -24,31 +24,39 @@ const hierarchy = {
     "[[💰 Finances]]",
     "[[👩‍⚖️ Legal & Tax]]",
     "[[💼 Employment]]",
-    "[[👮‍♂️ Government]]"
+    "[[👮‍♂️ Government]]",
+    "[[🧐 Analysts]]",
+    "[[🛄 Travel]]"
   ],
   "[[👥 People]]": [
     "[[🧑‍🧑‍🧒‍🧒 Family]]",
     "[[👯 Friends]]",
-    "[[💪 Work]]",
+    "[[💪 Work People]]",
     "[[🐶 Pets]]",
     "[[🧾 Providers]]",
     "[[👩‍🎓 Applicant Tracker]]",
     "[[🩺 Doctors]]"
   ],
+  "[[👔 Work]]": [
+	"[[🌴 Work Topics]]",
+	"[[👐 1st Pty Partners]]"
+  ],
   "[[🚴‍♀️ Teams]]": [
-    "[[👩‍⚕️ Medical]]",
-    "[[🚴‍♀️ Work]]",
+    "[[🚴‍♀️ Medical]]",
+    "[[🚴‍♀️ Work Teams]]",
     "[[🚴‍♀️ Old Brompton Road (OBR)]]",
     "[[🚴‍♀️ Killarney Road]]",
     "[[🏡 Garden House]]",
     "[[🍸 Olive Grove]]",
     "[[🚴‍♀️ Santa Maura]]",
     "[[🚴‍♀️ champion]]",
-    "[[🐶 Nellie]]"
+    "[[🚴‍♀️ Pets]]"
   ],
   "[[🚵 Sanity]]": [
     "[[🐧 Linux]]",
+    "[[🍱 Recipies]]",
     "[[🚴‍♀️ Sports]]",
+    "[[✍️ Stories]]",
     "[[✈️ Travel Plans]]",
     "[[👩‍🏫 Training]]"
   ],
@@ -58,7 +66,8 @@ const hierarchy = {
     "[[🖇️ Attachments]]",
     "[[📎 Clippings]]",
     "[[🎗️ Reminders]]",
-    "[[💜 Obsidian Tools]]"
+    "[[💜 Obsidian Tools]]",
+    "[[🔒 Vault]]"
   ]
 };
 
@@ -524,48 +533,4 @@ if (stats.invalidTeamAssignments.length > 0) {
   }
 }
 ```
-
-
-
-# Quick Queries
-
-Use these simple DataView queries to find specific notes:
-
-## Find Uncategorized Notes
-```
-TABLE file.folder as Folder, file.mtime as Modified
-WHERE !Category
-SORT file.mtime DESC
-LIMIT 20
-```
-
-## Find Notes by Specific Category
-```
-TABLE Subcategory, Team, file.mtime as Modified
-WHERE Category = "[[🏛️ Institutions]]"
-SORT file.mtime DESC
-```
-
-## Find Notes Without Subcategories
-```
-TABLE Category, Team, file.mtime as Modified
-WHERE Category AND !Subcategory
-SORT file.name ASC
-```
-
-## Find Team Members
-```
-TABLE Category, Subcategory, file.mtime as Modified
-WHERE contains(Team, "[[🚴‍♀️ Work]]")
-SORT Category ASC
-```
-
-## Validate Team Assignments
-1. Open hierarchy-validator.md
-2. Check "Team Assignment Validation" section
-3. Fix any invalid team assignments shown
-
-```
-TABLE Category, Subcategory, Stakeholder, Team
-WHERE contains(Subcategory,[[🚴‍♀️ Work]])
-```
+---

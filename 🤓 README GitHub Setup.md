@@ -1,4 +1,9 @@
-# Obsidian Project - Complete Git & GitHub Guide
+---
+Category: "[[🔲 Frameworks]]"
+Subcategory:
+  - "[[💜 Obsidian Tools]]"
+---
+Obsidian Project - Complete Git & GitHub Guide
 
 A web development project with Python backend and HTML/JavaScript frontend, using Git for version control with a dual-branch workflow.
 
@@ -84,12 +89,43 @@ Press `Cmd + ,` and enable:
 
 ### 1. Install Git on macOS
 
-Choose one of these methods:
+Multiple Git installations can coexist:
+1. macOS includes Apple’s Git at `/usr/bin/git` via the Xcode Command Line Tools.
+2. Homebrew would install its own Git under `/opt/homebrew/Cellar/git/...` with a symlink at `/opt/homebrew/bin/git` (Apple Silicon) or `/usr/local/bin/git` (Intel).
+
+Homebrew will install a newer version of git than what's included in macOS:
+
+1. macOS version can be found like this:
+```shell
+git --version
+git version 2.39.5 (Apple Git-154)
+```
+
+2. Homebrew available version can be found like this:
+```bash
+brew info git              
+==> git: stable 2.50.1 (bottled), HEAD
+Distributed revision control system
+https://git-scm.com
+Not installed
+```
+	Notice above it says "Not installed"
+
+Recommendation is Option A below:
 
 **Option A: Using Homebrew (Recommended)**
 ```bash
+# Check if brew is installed
+which brew
+brew --version
+
 # Install Homebrew if you don't have it
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Update brew
+brew update
+brew upgrade
+brew cleanup
 
 # Install Git
 brew install git
@@ -104,6 +140,22 @@ xcode-select --install
 - Visit [git-scm.com](https://git-scm.com/download/mac)
 - Download and run the installer
 
+**Switch to using the brew version of git**
+
+For Intel mac (you’re using /usr/local), add to ~/.zshrc (or ~/.bash_profile if using bash):
+
+```shell
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+```
+
+For Apple Silicon mac:
+
+```shell
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+```
+
+If the file name doesn't exist, create it.
+
 **Verify installation:**
 ```bash
 git --version
@@ -116,10 +168,10 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
 
-### 3. Set up GitHub Authentication
+### 3. Set up GitHub Authentication (I never used this...)
 
 **Create Personal Access Token (PAT):**
-1. Go to GitHub.com → Settings → Developer settings → Personal access tokens → Tokens (classic)
+1. Go to GitHub.com → Your Profile Picture (top right) → Settings → Developer settings → Personal access tokens → Tokens (classic)
 2. Click "Generate new token (classic)"
 3. Give it a descriptive name
 4. Select scopes: `repo`, `workflow`, `write:packages`, `delete:packages`

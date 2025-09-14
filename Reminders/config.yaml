@@ -1,0 +1,39 @@
+# Obsidian-Reminders Sync Configuration
+# Place this file at: /Users/tonythem/Github/obsidian/Reminders/config.yaml
+
+# Paths - vault_path will be automatically updated from web interface
+vault_path: "/Users/tonythem/Obsidian/tonythem"
+archive_path: "🔲 Framework/🎗️ Reminders/📚 Archive.md"
+logs_directory: "/Users/tonythem/Github/obsidian/Reminders/Logs"
+
+# Sync Settings
+sync_interval_minutes: 3
+batch_size: 10  # Number of tasks to process at once
+enable_bidirectional: true
+obsidian_priority: true  # Obsidian takes priority in conflicts
+
+# Performance
+enable_progress_logging: true
+progress_interval: 10  # Log progress every N notes
+max_retries: 3
+retry_delay_seconds: 2
+
+# Exclusions
+excluded_folders:
+  - "Templates"
+  - ".obsidian"
+  - ".trash"
+
+excluded_lists: []
+  # - "Personal"  # Example: exclude specific Reminders lists
+
+# Features
+sync_due_dates: true
+sync_priorities: true
+sync_tags: true
+archive_completed_tasks: true
+
+# Logging
+log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+max_log_size_mb: 10
+log_retention_days: 30

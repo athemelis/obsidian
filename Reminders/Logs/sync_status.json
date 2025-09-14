@@ -1,0 +1,11 @@
+{
+  "status": "running",
+  "last_updated": "2025-09-14T10:57:09.519004",
+  "current_stats": {
+    "start_time": "2025-09-14T10:57:09.518975",
+    "end_time": null,
+    "tasks_synced": 0,
+    "errors": [],
+    "status": "running"
+  }
+}
